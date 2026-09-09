@@ -27,16 +27,15 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 header{padding:28px 0 10px}
 h1{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:36px;color:var(--gold)}
 .lead{color:var(--muted);margin:8px 0 16px}
-.jump{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.jump a{color:var(--gold-2);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.banner{width:100%;height:150px;object-fit:cover;object-position:center;margin:28px 0 16px}
+.jump a{color:var(--gold-2);text-decoration:none;margin-right:14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.banner{width:100%;height:auto;display:block;margin:28px 0 16px}
 .notice{color:#f0d2c6;margin:0 0 18px;font-style:italic}
 .item{padding:12px 0 12px 14px;border-left:2px solid rgba(224,180,35,.55);margin-bottom:10px}
 .item b{display:block;font-family:Oswald,sans-serif;letter-spacing:.06em;margin-bottom:4px}
 .item p,.item li{color:var(--muted)}
 .item ul{margin:6px 0 0 18px}
 .faction{margin:0 0 22px}
-.faction img{width:100%;height:130px;object-fit:cover}
+.faction img{width:100%;height:auto;display:block}
 .faction h3{font-family:Oswald,sans-serif;letter-spacing:.06em;margin:10px 0 4px}
 .faction p{color:var(--muted)}
 footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,35,.2);margin-top:28px}
@@ -56,7 +55,6 @@ footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Discord</a>
 </div>
 </nav>
-
 <header>
 <div class="wrap">
 <h1>SQUAD RULES</h1>
@@ -70,7 +68,6 @@ footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,
 </div>
 </div>
 </header>
-
 <main class="wrap">
 <img class="banner" id="general" src="squadgeneralrules.png" alt="General Rules">
 <p class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay.</p>
@@ -98,8 +95,7 @@ footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,
 <div class="item"><b>2.11 Bot kicks</b><p>Steam under 10 days, no community profile, VAC/game ban in 180 days, short names, hidden characters, URL in name.</p></div>
 
 <img class="banner" id="seeding" src="squadseedingrules.png" alt="Seeding Rules">
-<p class="notice">If the server is under 60 players, seeding rules are in effect until a live broadcast.</p>
-<div class="item"><b>3.1 Seeding FOB placement</b><p>Don’t build FOBs / HABs on middle caps.</p></div>
+<div class="item"><b>3.1 Seeding FOB placement</b><p>Under 60 players: don’t build FOBs/HABs on middle caps.</p></div>
 <div class="item"><b>3.2 Don’t hurt seeding</b><p>Don’t camp map borders and kill people crossing into the play area.</p></div>
 
 <section id="faq">
@@ -136,7 +132,6 @@ footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,
 <article class="faction"><img src="WPMC.png" alt="Western Private Military Contractors"><h3>Western Private Military Contractors</h3><p><b>Main Battle Tanks:</b> M60<br><b>One-Man Vehicles:</b> M1117, M113A3 M2, M1151 TOW<br><b>Helicopters:</b> Raven, Loach Scout<br><b>CAS Helicopters:</b> Loach CAS</p></article>
 </section>
 </main>
-
 <footer>
 <div class="wrap"><a href="index.html">← Home</a> · <a href="wardogs-rules.html">WARDOGS Rules</a></div>
 </footer>

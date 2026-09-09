@@ -30,29 +30,31 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 .hero img.logo{width:110px;margin:0 auto 14px}
 .hero h1{font-family:Oswald,sans-serif;font-size:clamp(40px,8vw,78px);letter-spacing:.12em}
 .hero p{max-width:640px;margin:12px auto 22px;color:#ddd3b8}
-.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero .cta{justify-content:center}
 section{padding:48px 0}
-h2{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:32px;margin-bottom:18px;color:var(--gold)}
-h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:18px 0 8px}
-.servers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.game p{color:var(--muted);margin:8px 0 14px}
-.pills{display:flex;gap:8px;margin-bottom:12px}
-.pill{color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.live{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;margin:10px 0 14px}
-.live strong{font-family:Oswald,sans-serif;font-size:28px;letter-spacing:.06em;color:var(--gold)}
+h2{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:32px;margin-bottom:8px;color:var(--gold)}
+h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:0 0 8px}
+.sub{color:var(--muted);margin-bottom:16px}
+hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 22px}
+.block{margin-bottom:36px}
+.live{display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;margin:8px 0 12px}
+.live strong{font-family:Oswald,sans-serif;font-size:30px;letter-spacing:.06em;color:var(--gold)}
 .live span{color:var(--muted);font-size:14px}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666;vertical-align:middle}
 .dot.on{background:#3dcc6f}
 .dot.off{background:#b31f24}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{border-top:1px solid rgba(224,180,35,.25);padding:16px 0}
+.box p{color:var(--muted);margin:0 0 12px}
 .sponsor{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:14px}
 .sponsor img{width:48px;height:48px;object-fit:contain}
 .about p{color:var(--muted);margin-bottom:14px;max-width:76ch}
 .staff{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
 .staff ul{margin:0 0 8px 18px;color:var(--muted)}
-hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 28px}
 footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid rgba(224,180,35,.2)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:800px){.servers,.staff{grid-template-columns:1fr}}
+@media(max-width:800px){.grid,.staff{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -67,6 +69,7 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Join Discord</a>
 </div>
 </nav>
+
 <header class="hero">
 <div>
 <img class="logo" src="bb_logo.png" alt="Blood Bound">
@@ -79,38 +82,65 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 </div>
 </div>
 </header>
+
 <section id="servers">
 <div class="wrap">
-<h2>SERVERS</h2>
+
+<div class="block">
+<h2>SQUAD</h2>
 <hr>
-<div class="servers">
-<article class="game">
-<h3>SQUAD</h3>
 <div class="live">
 <div><span class="dot" id="sq-dot"></span><strong id="sq-count">— / —</strong></div>
 <div><span id="sq-map">Loading map…</span></div>
 </div>
-<p>Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
-<div class="cta" style="justify-content:flex-start">
+<p class="sub">Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
+<div class="cta">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 <a class="btn ghost" href="squad-rules.html">Squad Rules</a>
-<a class="btn ghost" href="https://squadbrowser.app/servers/LICENSED-1000444" target="_blank">Live stats</a>
+<a class="btn ghost" href="https://squadbrowser.app/servers/LICENSED-1000444" target="_blank">SquadBrowser</a>
+<a class="btn ghost" href="https://www.battlemetrics.com/servers/squad/2272069" target="_blank">BattleMetrics</a>
+</div>
+</div>
+
+<div class="block">
+<h2>WARDOGS</h2>
+<p class="sub">Public EU servers. Add more boxes under this row when new servers go live.</p>
+<hr>
+<div class="grid">
+<article class="box" data-bm="">
+<h3>Vanilla</h3>
+<div class="live">
+<div><span class="dot"></span><strong>— / —</strong></div>
+<div><span>Stats soon</span></div>
+</div>
+<p>Standard WARDOGS ruleset. Join link and live count go here when the server is up.</p>
+<div class="cta">
+<a class="btn ghost off">Join Vanilla</a>
+<a class="btn ghost" href="wardogs-rules.html">Rules</a>
 </div>
 </article>
-<article class="game">
-<h3>WARDOGS</h3>
-<p>Public EU servers. Vanilla and Hardcore. More servers if the Community wants them.</p>
-<div class="pills"><span class="pill">Vanilla</span><span class="pill">Hardcore</span></div>
-<div class="cta" style="justify-content:flex-start">
-<a class="btn ghost off">Vanilla — link soon</a>
-<a class="btn ghost off">Hardcore — link soon</a>
-<a class="btn ghost" href="wardogs-rules.html">WARDOGS Rules</a>
+<article class="box" data-bm="">
+<h3>Hardcore</h3>
+<div class="live">
+<div><span class="dot"></span><strong>— / —</strong></div>
+<div><span>Stats soon</span></div>
 </div>
-<div class="sponsor"><img src="qLogo.png" alt="Qonzer"><span>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</span></div>
+<p>Hardcore WARDOGS ruleset. Join link and live count go here when the server is up.</p>
+<div class="cta">
+<a class="btn ghost off">Join Hardcore</a>
+<a class="btn ghost" href="wardogs-rules.html">Rules</a>
+</div>
 </article>
 </div>
+<div class="sponsor">
+<img src="qLogo.png" alt="Qonzer">
+<span>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</span>
+</div>
+</div>
+
 </div>
 </section>
+
 <section id="about">
 <div class="wrap about">
 <h2>ABOUT</h2>
@@ -151,39 +181,48 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 </div>
 </div>
 </section>
+
 <footer>
 <div class="wrap foot">
 <div>Blood Bound Community · Squad &amp; WARDOGS</div>
 <div><a href="index.html">Home</a> · <a href="squad-rules.html">Squad Rules</a> · <a href="wardogs-rules.html">WARDOGS Rules</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
 </div>
 </footer>
-<script>
-const countEl = document.getElementById("sq-count");
-const mapEl = document.getElementById("sq-map");
-const dotEl = document.getElementById("sq-dot");
-const BM = "https://api.battlemetrics.com/servers/2272069";
 
-async function loadSquad(){
+<script>
+async function fill(id, countEl, mapEl, dotEl){
   try{
-    const res = await fetch(BM);
+    const res = await fetch("https://api.battlemetrics.com/servers/" + id);
     if(!res.ok) throw new Error("bad");
-    const json = await res.json();
-    const a = json.data.attributes;
+    const a = (await res.json()).data.attributes;
     const players = a.players ?? 0;
-    const max = a.maxPlayers ?? 100;
+    const max = a.maxPlayers ?? 0;
     const map = (a.details && (a.details.map || a.details.layer)) || "Unknown map";
-    const online = a.status === "online";
     countEl.textContent = players + " / " + max;
     mapEl.textContent = map;
-    dotEl.className = "dot " + (online ? "on" : "off");
+    dotEl.className = "dot " + (a.status === "online" ? "on" : "off");
   }catch(e){
     countEl.textContent = "— / —";
     mapEl.textContent = "Stats unavailable";
     dotEl.className = "dot off";
   }
 }
-loadSquad();
-setInterval(loadSquad, 60000);
+
+function loadBox(box){
+  const id = box.getAttribute("data-bm");
+  if(!id) return;
+  const strong = box.querySelector("strong");
+  const map = box.querySelector(".live span:not(.dot)");
+  const dot = box.querySelector(".dot");
+  fill(id, strong, map, dot);
+}
+
+function refresh(){
+  fill("2272069", document.getElementById("sq-count"), document.getElementById("sq-map"), document.getElementById("sq-dot"));
+  document.querySelectorAll(".box[data-bm]").forEach(loadBox);
+}
+refresh();
+setInterval(refresh, 60000);
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blood Bound — Community Rules</title>
+<title>Blood Bound Community</title>
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -13,61 +13,63 @@ html{scroll-behavior:smooth}
 body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
-.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+.wrap{width:min(1080px,calc(100% - 32px));margin:0 auto}
 nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
 .brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
-.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
-.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;font-size:13px;border:1px solid transparent}
+.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;font-size:13px;border:1px solid transparent}
 .btn.red{background:var(--red);color:#fff}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
 .btn.discord{background:var(--discord);color:#fff}
-.hero{position:relative;min-height:58vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:#000 url("BB_Server_Invite_V3_2048x1152.png") center 28%/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,11,.35) 0%,rgba(12,13,11,.55) 55%,#0c0d0b 100%)}
-.hero-inner{position:relative;z-index:1;padding:56px 20px 48px}
-.hero img.logo{width:118px;margin:0 auto 14px}
-.hero h1{font-family:Oswald,sans-serif;font-size:clamp(40px,7vw,76px);letter-spacing:.12em;line-height:.95}
-.hero p{max-width:640px;margin:14px auto 22px;color:#d7d0bc;font-size:17px}
+.btn.off{opacity:.55;pointer-events:none}
+.hero{position:relative;min-height:52vh;display:grid;place-items:center;text-align:center;background:#000 url("BB_Server_Invite_V3_2048x1152.png") center 28%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,11,.4),#0c0d0b)}
+.hero-inner{position:relative;z-index:1;padding:48px 20px 36px}
+.hero img.logo{width:110px;margin:0 auto 12px}
+.hero h1{font-family:Oswald,sans-serif;font-size:clamp(36px,7vw,72px);letter-spacing:.12em}
+.hero p{max-width:640px;margin:12px auto 20px;color:#d7d0bc}
 .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-section{padding:44px 0}
-h2{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:32px;margin-bottom:10px;color:var(--gold)}
-.lead{color:var(--muted);margin-bottom:20px;max-width:72ch}
-.notice{background:#2a160f;border:1px solid #6a2a1e;padding:14px 16px;margin-bottom:16px;color:#f0d2c6}
-.rule{background:var(--panel);border:1px solid var(--line);margin-bottom:10px}
-.rule summary{cursor:pointer;list-style:none;padding:14px 16px;font-family:Oswald,sans-serif;letter-spacing:.08em;font-size:19px;display:flex;justify-content:space-between}
-.rule summary::-webkit-details-marker{display:none}
-.rule summary::after{content:"+";color:var(--gold)}
-.rule[open] summary::after{content:"–"}
-.rule .body{padding:0 16px 16px;color:var(--muted)}
-.rule .body ul{margin:8px 0 0 18px}
-.faq{background:#1c1e16;border:1px solid var(--line);padding:14px 16px;margin-bottom:8px}
-.faq h3{font-size:16px;margin-bottom:4px;color:var(--gold-2)}
-.faq p,.faq li,.steps li{color:var(--muted)}
-.faq ol,.steps ol{margin:8px 0 0 20px}
-.steps{background:var(--panel);border:1px solid var(--line);padding:16px;margin-top:14px}
-.games{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
-.game{background:var(--panel);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column}
-.game h3{font-family:Oswald,sans-serif;letter-spacing:.1em;margin-bottom:8px}
-.game p{color:var(--muted)}
-.pills{display:flex;gap:8px;margin:12px 0 0}
-.pill{border:1px solid var(--line);color:var(--gold-2);padding:5px 9px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
-.sponsor{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:14px;border-top:1px solid var(--line)}
-.sponsor img{width:72px;height:72px;object-fit:contain;flex-shrink:0}
-.sponsor p{color:var(--muted);font-size:14px;margin:0}
-footer{border-top:1px solid var(--line);padding:20px 0 36px;color:var(--muted);font-size:14px}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-@media(max-width:760px){.nav-links .hide{display:none}.games{grid-template-columns:1fr}}
+section{padding:36px 0}
+h2{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:30px;margin-bottom:10px;color:var(--gold)}
+h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:16px 0 8px}
+.lead{color:var(--muted);margin-bottom:16px;max-width:75ch}
+.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin:12px 0 16px;color:#f0d2c6}
+.servers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:10px}
+.card p{color:var(--muted)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);color:var(--gold-2);padding:4px 8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.sponsor{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.sponsor img{width:56px;height:56px;object-fit:contain}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 18px}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:8px 12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.tabs button.active{background:var(--gold);color:#111;border-color:var(--gold)}
+.panel{display:none}
+.panel.active{display:block}
+.rule{background:var(--panel);border:1px solid var(--line);margin-bottom:8px;padding:12px 14px}
+.rule b{display:block;margin-bottom:4px}
+.rule p,.rule li{color:var(--muted)}
+.rule ul{margin:6px 0 0 18px}
+.faction{background:var(--panel);border:1px solid var(--line);padding:12px 14px;margin-bottom:8px}
+.faction h4{font-family:Oswald,sans-serif;color:var(--gold-2);margin-bottom:6px}
+.faction p{color:var(--muted);font-size:14px}
+.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.subtabs button{background:#1c1e16;border:1px solid var(--line);color:var(--text);padding:7px 10px;cursor:pointer;font-weight:700}
+.subtabs button.active{border-color:var(--gold);color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:800px){.servers{grid-template-columns:1fr}.nav-links .hide{display:none}}
 </style>
 </head>
 <body>
 <nav>
 <a class="brand" href="#top"><img src="bb_logo.png" alt="Blood Bound"><b>BLOOD BOUND</b></a>
 <div class="nav-links">
-<a class="hide" href="#community">Community</a>
-<a class="hide" href="#rules">Rules</a>
-<a class="hide" href="#faq">Report / Appeal</a>
+<a href="#servers">Servers</a>
+<a href="#rules">Rules</a>
 <a class="btn ghost" href="https://donate.bloodbound.eu/" target="_blank">Patreon</a>
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Join Discord</a>
 </div>
@@ -77,28 +79,32 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px;color:var(--muted);f
 <div class="hero-inner">
 <img class="logo" src="bb_logo.png" alt="Blood Bound">
 <h1>BLOOD BOUND</h1>
-<p>A long-standing gaming community. Public Squad and WARDOGS servers. Banter is fine. Cheating, griefing and harassment are not.</p>
+<p>Long-standing gaming Community. Public Squad and WARDOGS servers. Banter is fine. Cheating, griefing and harassment are not.</p>
 <div class="cta">
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Join Discord</a>
-<a class="btn red" href="https://donate.bloodbound.eu/" target="_blank">Support on Patreon</a>
-<a class="btn ghost" href="#rules">Read the rules</a>
+<a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
+<a class="btn red" href="https://donate.bloodbound.eu/" target="_blank">Patreon</a>
 </div>
 </div>
 </header>
 
-<section id="community">
+<section id="servers">
 <div class="wrap">
-<h2>THE COMMUNITY</h2>
-<p class="lead">Blood Bound is a long-standing gaming community with public Squad and WARDOGS servers and an active Discord. We focus on solid servers, experienced players, good teamwork and a community people actually want to stick around in. Banter is fine, but cheating, griefing and harassment are not.</p>
-<div class="games">
-<article class="game">
+<h2>SERVERS</h2>
+<div class="servers">
+<article class="card">
 <h3>SQUAD</h3>
-<p>Experienced preferred public server. We attract a lot of experienced players and SLs, while still being welcoming to people who are willing to learn and play properly. Good teamwork, active admins and a long-running community behind it.</p>
+<p>Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
+<a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 </article>
-<article class="game">
+<article class="card">
 <h3>WARDOGS</h3>
-<p>Public EU servers with active admins and room to grow. We run a Vanilla server and a Hardcore server, with plans to expand as the community grows and we see what people actually want to play.</p>
+<p>Public EU servers. Vanilla and Hardcore. More servers if the Community wants them.</p>
 <div class="pills"><span class="pill">Vanilla</span><span class="pill">Hardcore</span></div>
+<div class="cta" style="justify-content:flex-start">
+<a class="btn ghost off">Vanilla — link soon</a>
+<a class="btn ghost off">Hardcore — link soon</a>
+</div>
 <div class="sponsor">
 <img src="qLogo.png" alt="Qonzer">
 <p>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</p>
@@ -110,63 +116,149 @@ footer{border-top:1px solid var(--line);padding:20px 0 36px;color:var(--muted);f
 
 <section id="rules">
 <div class="wrap">
-<h2>GENERAL RULES</h2>
-<p class="lead">These apply on Discord and on our game servers.</p>
-<div class="notice">Admins reserve the right to remove anyone whose behaviour significantly disrupts the community, gameplay or safety of others — even if the behaviour is not explicitly covered by the following rules.</div>
-<details class="rule" open><summary>Rule 1 — Be Respectful</summary><div class="body"><p>Always be respectful towards others. Discussions and disagreements are allowed, just keep them civil.</p><p>Do not engage in personal attacks, harassment or abusive behaviour. Friendly banter and casual shit-talk towards the enemy team is allowed, provided it does not cross into harassment or discrimination (see Rules 6 and 7).</p></div></details>
-<details class="rule"><summary>Rule 2 — No Spamming or Advertising</summary><div class="body"><p>Excessively loud music, advertising and self-promotion — including streams, YouTube channels, Discord servers, clans or other communities — is not allowed without permission from Clan Management.</p><p>In-game usernames may include your YouTube or Twitch name, provided they otherwise follow the server rules.</p></div></details>
-<details class="rule"><summary>Rule 3 — No Inappropriate Content</summary><div class="body"><p>Do not post, share, or distribute inappropriate or disturbing content. This includes, but is not limited to:</p><ul><li>Pornographic or sexually explicit content</li><li>Racist, discriminatory, or derogatory content</li><li>Excessive gore or disturbing imagery</li><li>Bright flashing images or content intended to cause discomfort or harm</li></ul></div></details>
-<details class="rule"><summary>Rule 4 — No Griefing</summary><div class="body"><p>Do not intentionally ruin the experience of other players. This includes trolling, griefing, intentionally throwing games, or excessive toxicity intended to negatively affect teammates.</p><p>This rule applies to both Discord and our game servers.</p></div></details>
-<details class="rule"><summary>Rule 5 — No Cheats or Exploits</summary><div class="body"><p>Cheats, hacks, scripts, exploits, glitches or third-party software that provide an unfair advantage are strictly prohibited.</p></div></details>
-<details class="rule"><summary>Rule 6 — No Discrimination</summary><div class="body"><p>Discrimination of any kind is strictly prohibited. Zero tolerance for racism, sexism, homophobia, religious discrimination, or any other hateful behaviour.</p></div></details>
-<details class="rule"><summary>Rule 7 — No Politics</summary><div class="body"><p>Political arguments, propaganda, extremist content, or attempts to provoke political conflict are not permitted.</p><p>References in usernames, clan tags, or other in-game identifiers are also prohibited.</p><p>No references to political, extremist or controversial groups, movements or incidents — current or historical. Examples include Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK, and similar.</p></div></details>
-<details class="rule"><summary>Rule 8 — Appealing a Ban</summary><div class="body"><p>Go to <strong>#report-appeal-faq</strong> on Discord, or read the section below.</p></div></details>
-<details class="rule"><summary>Rule 9 — No Impersonation</summary><div class="body"><p>Impersonating admins, members of Blood Bound, or Bulkhead staff will be harshly punished.</p></div></details>
+<h2>RULES</h2>
+<p class="lead">Community rules cover Discord. Game servers have their own tabs.</p>
+<div class="tabs">
+<button class="active" data-tab="community">Community</button>
+<button data-tab="squad">Squad</button>
+<button data-tab="wardogs">WARDOGS</button>
 </div>
-</section>
 
-<section id="faq">
-<div class="wrap">
-<h2>REPORT / APPEAL FAQ</h2>
-<p class="lead">Use the Discord channels. Do not DM admins unless they ask you to.</p>
+<div id="community" class="panel active">
+<div class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay. These are the general Blood Bound Community Rules and apply across the entire Discord. Game-server rules are in the Squad and WARDOGS tabs.</div>
+<div class="rule"><b>Rule 1.1 — Be Respectful</b><p>Always be respectful towards others. Discussions, arguments and banter are fine, just keep it reasonable. Personal attacks, targeted harassment or repeatedly trying to provoke other members will not be tolerated.</p></div>
+<div class="rule"><b>Rule 1.2 — No Spamming or Advertising</b><p>No spamming, advertising or recruiting. This includes message spam, mic-spam, advertising or self-promoting streams, YouTube channels, clans, Discord servers etc. Permission to promote can be obtained from Clan Management.</p></div>
+<div class="rule"><b>Rule 1.3 — No Inappropriate Content</b><p>Do not post pornography, graphic gore, malicious links, scams, illegal content or anything that violates Discord’s Terms of Service or Community Guidelines.</p></div>
+<div class="rule"><b>Rule 1.4 — No Trolling</b><p>Banter and jokes are welcome, but intentionally disrupting channels, repeatedly targeting members or creating problems for the Community is not.</p></div>
+<div class="rule"><b>Rule 1.5 — No Discrimination</b><p>Zero-tolerance towards racism, homophobia, sexism or any other form of serious discriminatory behaviour or harassment.</p></div>
+<div class="rule"><b>Rule 1.6 — No Politics</b><p>No references to political, extremist or controversial groups, movements or incidents, current or historical. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
+<div class="rule"><b>Rule 1.7 — No Doxxing</b><p>Do not share another person’s private or identifying information without their permission. Threats, blackmail or attempts to expose another member’s personal information will result in serious action.</p></div>
+<div class="rule"><b>Rule 1.8 — Minimum Age</b><p>The minimum age for this Community is 16. Members must also comply with Discord’s Terms of Service.</p></div>
+<div class="rule"><b>Rule 1.9 — No Impersonation</b><p>Impersonating admins, members, developers, Discord staff or other Community staff will be harshly punished.</p></div>
+<div class="rule"><b>Rule 1.10 — Admin decision</b><p>To appeal an admin decision or complain about staff, use the relevant Contact an Admin channel and follow the instructions there.</p></div>
+</div>
+
+<div id="squad" class="panel">
+<div class="subtabs">
+<button class="active" data-sub="s-general">General / Server</button>
+<button data-sub="s-claims">Vehicle Claims</button>
+<button data-sub="s-faq">Rules FAQ</button>
+<button data-sub="s-appeal">Appeal FAQ</button>
+</div>
+<div id="s-general" class="subpanel">
 <div class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay.</div>
-<article class="faq"><h3>FAQ-1 — What is Contact an Admin used for?</h3><p>Use Contact an Admin to report problematic players, appeal a ban, or ask questions that need a server admin.</p></article>
-<article class="faq"><h3>FAQ-2 — How can I report issues?</h3><p>Use Contact an Admin for player issues, the technical-issues channel for technical problems, and the gameplay-feedback channel for gameplay feedback.</p></article>
-<article class="faq"><h3>FAQ-3 — Can I contact admins directly?</h3><p>Do not DM admins unless explicitly asked. Report all issues in Contact an Admin.</p></article>
-<article class="faq"><h3>FAQ-4 — How do I appeal bans?</h3><p>Go to Contact an Admin, tag the Admin role, and give your Steam profile permalink plus a statement about the ban and why it should be lowered or removed.</p></article>
-<article class="faq"><h3>FAQ-5 — Can I get help in voice chat?</h3><p>No. Reports stay in Contact an Admin, not voice.</p></article>
-<article class="faq"><h3>FAQ-6 — How to get a SteamID64</h3><p><strong>Steam desktop:</strong> open the profile → right-click the page → Copy Page URL → paste into steamid.io → lookup → copy steam64ID.</p><p><strong>Browser:</strong> copy the profile URL → paste into steamid.io → lookup → copy steam64ID.</p></article>
-<div class="steps">
-<h3 style="color:var(--gold);margin-bottom:8px">How to make a report</h3>
-<ol>
-<li>Tag the Admin role.</li>
-<li>Provide the in-game name of the offending player.</li>
-<li>Tell us their team, and squad if you know it.</li>
-<li>Explain in detail what they did.</li>
-<li>Add evidence if you have it. Video is preferred.</li>
-</ol>
+<h3>General</h3>
+<div class="rule"><b>1.1 Be Respectful</b><p>Keep discussions civil. No offensive language, personal attacks or harassment.</p></div>
+<div class="rule"><b>1.2 No Spamming or Advertising</b><p>No mic-spam, advertising or recruiting streams, YouTube, clans or Discords without permission from Clan Management.</p></div>
+<div class="rule"><b>1.3 No Inappropriate Content</b><p>No pornography, racism, “feet”, discriminatory speech, bright flashing images or gore.</p></div>
+<div class="rule"><b>1.4 No Griefing</b><p>No trolling, griefing or toxicity. Play sincerely and respectfully.</p></div>
+<div class="rule"><b>1.5 No Discrimination</b><p>Zero-tolerance for racism, homophobia, sexism or any discrimination.</p></div>
+<div class="rule"><b>1.6 No Politics</b><p>No political / extremist references in names or chat. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
+<div class="rule"><b>1.7 Appealing a Ban</b><p>Use the Squad Appeal FAQ below.</p></div>
+<div class="rule"><b>1.8 Minimum Age</b><p>16.</p></div>
+<div class="rule"><b>1.9 No Impersonation</b><p>Impersonating admins, members or OWI staff will be harshly punished.</p></div>
+<h3>Server rules</h3>
+<div class="rule"><b>2.1 No Teamkilling</b><ul><li>No intentional TKs for any reason.</li><li>Apologise for TKs in ALL chat.</li></ul></div>
+<div class="rule"><b>2.2 No Ghosting</b><ul><li>No ghosting or stream sniping. Do not share intel with the enemy during the game.</li><li>Examples: stream sniping, saying GG during an active round, baiting for intel.</li></ul></div>
+<div class="rule"><b>2.3 No Exploits</b><p>Exploits and cheats are not allowed.</p></div>
+<div class="rule"><b>2.4 No Main Camping</b><ul><li>Main base camping is not allowed.</li><li>Attacking mortar FOBs, UB32s, TOWs or chasing a vehicle back is allowed. Then return to active objectives. Attacking people leaving main is not allowed.</li></ul></div>
+<div class="rule"><b>2.5 Play the Objective</b><ul><li>All squads play active objectives.</li><li>Commanders should use role assets (UAV, artillery, etc.).</li></ul></div>
+<div class="rule"><b>2.6 Squad Leader Requirements</b><ul><li>SLs speak English, use a mic and communicate.</li><li>Only create a squad if you will lead it.</li><li>SLs can kick anyone.</li><li>General infantry squads need 4 members to lock.</li><li>Do not kick people under 4 just to keep the squad for friends.</li></ul></div>
+<div class="rule"><b>2.7 Specialised Infantry Squads</b><ul><li>Can lock below 4 if clearly named: MORTAR, CMD, Tow-FOB, LOGI.</li><li>Logis are a team asset. Coordinate.</li></ul></div>
+<div class="rule"><b>2.8 Vehicle Claims</b><ul><li>Specialised vehicle squads can lock below 4. One claim per squad. Name the asset in the squad name.</li><li>Open-top gunner seats such as MRAP/MK19 are not specialised vehicles.</li><li>Examples: BTR82A, Simir Kornet, M2A3, M1A1, UH60M.</li><li>First correctly named squad gets the claim. Commander loses vehicle claims when they take CMD.</li><li>Unclaimed vehicles are team assets. Claim ends when the vehicle dies or returns to main.</li><li>APC, IFV, MBT, HELI, BRADLY are not valid claim names.</li><li>Crewman-kit vehicles must have 2 crewmen in driver/gunner.</li></ul></div>
+<div class="rule"><b>2.9 No Asset Hogging</b><ul><li>Don’t hog vehicles. Let others try.</li><li>Console commands to claim vehicles are discouraged.</li></ul></div>
+<div class="rule"><b>2.10 No Asset Wasting</b><ul><li>No abandoning vehicles or heli ramming. IED bikes are allowed.</li><li>Don’t waste tickets on purpose at the end of a game.</li><li>Clipping rotors of other helis counts as ramming.</li></ul></div>
+<div class="rule"><b>2.11 Bot kicks</b><ul><li>Steam account under 10 days.</li><li>No Steam Community profile.</li><li>Game or VAC ban in the last 180 days.</li><li>Name under 3 characters, hidden/special characters, URL in name, under 3 Latin characters.</li></ul></div>
+<h3>Seeding (under 60 players)</h3>
+<div class="rule"><b>3.1 FOB placement</b><p>Don’t build FOBs / HABs on middle caps.</p></div>
+<div class="rule"><b>3.2 Don’t hurt seeding</b><p>Fill the server. Don’t camp map borders and kill people crossing into the play area.</p></div>
 </div>
-</div>
-</section>
 
-<section id="join">
-<div class="wrap" style="text-align:center">
-<h2>FALL IN</h2>
-<p class="lead" style="margin-left:auto;margin-right:auto">Discord is the hub. Patreon keeps the Community running.</p>
-<div class="cta">
-<a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Join Discord</a>
-<a class="btn red" href="https://donate.bloodbound.eu/" target="_blank">Support on Patreon</a>
+<div id="s-claims" class="subpanel" style="display:none">
+<div class="notice">Any unlisted vehicle cannot be claimed and is available to the whole team.</div>
+<div class="faction"><h4>United States Army</h4><p>MBT: M1A2 · MGS: MGS · IFV: M2A3 · APC: M1126 M240, M1126 M2 · Recce: M7A3 · One-man: M1151 TOW, M1151 CROWS, MATV TOW, MATV CROWS, M1064 · Heli: UH60</p></div>
+<div class="faction"><h4>United States Marine Corps</h4><p>MBT: M1A1 · IFV: LAV25 · One-man: AAVP, M1151 TOW, M1151 CROWS, MRAP TOW, MRAP CROWS · Heli: UH1Y</p></div>
+<div class="faction"><h4>Australian Defence Force</h4><p>MBT: M1A1 · IFV: ASLAV · One-man: PMV RWS, M1151 TOW · Heli: MRH90, UH60M</p></div>
+<div class="faction"><h4>British Armed Forces</h4><p>MBT: FV4034 · IFV: FV510 UA, FV510 · APC: FV423 L111A1 RWS · Recce: FV107 · One-man: FV432 L37A1 RWS, LPPV RWS, M1151 TOW · Heli: SA330</p></div>
+<div class="faction"><h4>Armed Forces of Ukraine</h4><p>MBT: T64 · IFV: BTR4, BMP1TS, BMP2, BMP1 · One-man: BRDM, Technical Kornet, MTLB PKT, BM21 Grad · Heli: Mi8</p></div>
+<div class="faction"><h4>Canadian Armed Forces</h4><p>MBT: LEOPARD2 · IFV: LAV6 · Recce: Coyote · APC: LAV III C6, LAV III M2 · One-man: TAPV, TLAV, M1151 TOW · Transport heli: CH146 · CAS: CH146 CAS</p></div>
+<div class="faction"><h4>Canadian Resistance Forces</h4><p>Recce: Coyote · One-man: M1151 TOW</p></div>
+<div class="faction"><h4>Russian Airborne Forces</h4><p>MBT: T72 · MGS: SPRUT · IFV: BMD4, BMD1 · One-man: BTRMDM, BTRZD · Heli: MI8</p></div>
+<div class="faction"><h4>Russian Ground Forces</h4><p>MBT: T72, T90 · IFV: BMP3, BMP2M, BMP2, BMP1AM, BMP1 · APC: BTR82, MTLB 6MB, BTR80 · One-man: BRDM, MTLB 6MA, MTLB PKT, MTLB VMK, SPANDREL, TIGR RWS · Heli: MI8</p></div>
+<div class="faction"><h4>Ground Forces of Iran</h4><p>MBT: T72, T62 · IFV: BMP2, BMP1 · One-man: MT-LB 6MA S8, BRDM-2 UB-32, SAFIR KORNET · Heli: UH1H</p></div>
+<div class="faction"><h4>Turkish Land Forces</h4><p>MBT: M60 · IFV: ACV15 25mm, PARS 25mm · APC: PARS M2, PARS MG3, PARS MK19 · One-man: COBRA RWS M2, COBRA RWS MG3 · Heli: UH60</p></div>
+<div class="faction"><h4>Middle Eastern Insurgents</h4><p>MBT: T62 · IFV: BMP1 · APC: BTR80 · One-man: MTLB PKT, BMP1 ZU23, MTLB ZU23, BRDM2, TECHIE KORNET, TECHIE SPG, TECHIE UB32, TECHIE ZU23, TECHIE BMP1, URAL ZU23</p></div>
+<div class="faction"><h4>Irregular Militia Forces</h4><p>MBT: T72, T62 · IFV: BMP2, BMP1 · APC: BTR80, MTLB 6MB · One-man: MTLB 6MA, MTLB VMK, MTLB ZU23, BM21, BMP1 ZU23, BRDM2, TECHIE SPG9, TECHIE KORNET, TECHIE ZU23, URAL ZU23</p></div>
+<div class="faction"><h4>People’s Liberation Army</h4><p>MBT: ZTZ · IFV: ZBD, ZBL, ZSL92 IFV, ZSD89 IFV · One-man: CSK HJ8, CSK RWS · Heli: Z8G, Z9A</p></div>
+<div class="faction"><h4>PLA Amphibious Ground Force</h4><p>MBT: ZTZ · MGS: ZTD · IFV: ZBD, ZSD89 IFV · One-man: CSK HJ8, CSK RWS · Heli: Z8G, Z9A</p></div>
+<div class="faction"><h4>PLA Navy Marine Corps</h4><p>MGS: ZTD · IFV: ZBD, ZBL · One-man: CSK HJ8, CSK RWS · Heli: Z8J</p></div>
+<div class="faction"><h4>Western Private Military Contractors</h4><p>MBT: M60 · One-man: M1117, M113A3 M2, M1151 TOW · Heli: Raven, Loach Scout · CAS: Loach CAS</p></div>
+</div>
+
+<div id="s-faq" class="subpanel" style="display:none">
+<div class="rule"><b>2.1 Is it okay to teamkill if…?</b><p>Never. Even if they steal your claimed vehicle. Record it and report it in Contact an Admin.</p></div>
+<div class="rule"><b>2.2 Can I stream on Discord?</b><p>Not the live game on our Discord. Use a 15 minute delay on Twitch / other Discords if you can.</p></div>
+<div class="rule"><b>Can I say GG at the end of an active round?</b><p>No. That intel changes how the enemy plays.</p></div>
+<div class="rule"><b>Can I switch teams mid-round?</b><p>Not after you have played on the other team. Instant switch after joining is fine.</p></div>
+<div class="rule"><b>2.3 Glitched under the map?</b><p>Do not shoot people. Respawn. Do not share info from the glitch.</p></div>
+<div class="rule"><b>2.4 Mines near enemy main?</b><p>Not on roads out of main unless it is an active objective. That is main camping.</p></div>
+<div class="rule"><b>TOW 800m+ from their main watching logis?</b><p>Yes, that is still main camping.</p></div>
+<div class="rule"><b>Looking into main to spot vehicles?</b><p>That is main camping, regardless of distance.</p></div>
+<div class="rule"><b>Hunting the Grad / mortar vic — can I shoot other vics?</b><p>Only engage the Grad/mortar vic or mortar FOB. You may shoot back if they shoot first.</p></div>
+<div class="rule"><b>If you are in doubt, you are main camping.</b></div>
+<div class="rule"><b>2.7 Valid locked infantry squads under 4</b><p>CMD/COMMAND. LOGI — no exclusive claim on logis. MORTAR — keep it small (3–4). TOW — no exclusive claim on logis.</p></div>
+</div>
+
+<div id="s-appeal" class="subpanel" style="display:none">
+<div class="notice">Do not spam Contact an Admin. Do not DM admins unless asked.</div>
+<div class="rule"><b>FAQ-1 Contact an Admin</b><p>Report players, appeal a ban, or ask something that needs an admin.</p></div>
+<div class="rule"><b>FAQ-2 How do I report?</b><p>Players: Contact an Admin. Tech: tech talk / bug reports. Gameplay: server feedback.</p></div>
+<div class="rule"><b>FAQ-3 DM admins?</b><p>No, unless they ask.</p></div>
+<div class="rule"><b>FAQ-4 Appeal a ban</b><p>Contact an Admin, tag Squad Admins, Steam profile permalink, and why the ban should be lowered or removed.</p></div>
+<div class="rule"><b>FAQ-5 Admin said no</b><p>Tag Independent Admin Affairs in Contact an Admin.</p></div>
+<div class="rule"><b>FAQ-6 Voice chat reports?</b><p>No. Text only in Contact an Admin.</p></div>
+<div class="rule"><b>How to report</b><ul><li>Tag Squad Admins.</li><li>In-game name.</li><li>Team and squad if known.</li><li>What they did.</li><li>Video preferred.</li></ul></div>
+</div>
+</div>
+
+<div id="wardogs" class="panel">
+<div class="notice">Admins reserve the right to remove anyone whose behaviour significantly disrupts the Community, gameplay or safety of others.</div>
+<div class="rule"><b>1 Be Respectful</b><p>Civil discussion. No personal attacks or harassment. Banter at the enemy is fine until it becomes harassment or discrimination.</p></div>
+<div class="rule"><b>2 No Spamming or Advertising</b><p>No loud music, ads or recruiting without Clan Management permission. Stream names in-game are fine if they follow the rules.</p></div>
+<div class="rule"><b>3 No Inappropriate Content</b><p>No porn, racist content, excessive gore, or flashing images meant to harm.</p></div>
+<div class="rule"><b>4 No Griefing</b><p>No trolling, throwing or toxicity aimed at teammates. Applies on Discord and the servers.</p></div>
+<div class="rule"><b>5 No Cheats or Exploits</b><p>Cheats, hacks, scripts, exploits, glitches or unfair third-party tools are banned.</p></div>
+<div class="rule"><b>6 No Discrimination</b><p>Zero-tolerance for racism, sexism, homophobia, religious discrimination or hate.</p></div>
+<div class="rule"><b>7 No Politics</b><p>No political arguments or extremist references in chat, names or tags. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
+<div class="rule"><b>8 Appealing a Ban</b><p>Use the WARDOGS report / appeal FAQ on Discord.</p></div>
+<div class="rule"><b>9 No Impersonation</b><p>Impersonating Blood Bound admins/members or Bulkhead staff will be harshly punished.</p></div>
+<div class="rule"><b>Appeal FAQ</b><p>Contact an Admin on Discord. Do not DM staff. Give Steam permalink + statement. Reports in text, not voice. Tag Admin, name, team/squad, what happened, video if you have it.</p></div>
 </div>
 </div>
 </section>
 
 <footer>
-<div class="wrap">
-<div class="foot">
+<div class="wrap foot">
 <div>Blood Bound Community · Squad &amp; WARDOGS</div>
-<div><a href="https://discord.bloodbound.eu/">Discord</a> · <a href="https://donate.bloodbound.eu/">Patreon</a> · <a href="#rules">Rules</a></div>
-</div>
+<div><a href="https://discord.bloodbound.eu/">Discord</a> · <a href="https://joinsquad.bloodbound.eu/">Join Squad</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
 </div>
 </footer>
+<script>
+const tabs=[...document.querySelectorAll('.tabs button')];
+const panels=[...document.querySelectorAll('.panel')];
+tabs.forEach(btn=>btn.onclick=()=>{
+  tabs.forEach(b=>b.classList.remove('active'));
+  panels.forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.tab).classList.add('active');
+});
+const subs=[...document.querySelectorAll('.subtabs button')];
+subs.forEach(btn=>btn.onclick=()=>{
+  subs.forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('#squad .subpanel').forEach(p=>p.style.display='none');
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.sub).style.display='block';
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blood Bound — Community Rules</title>
+  <meta name="description" content="Blood Bound community rules, report & appeal FAQ. Squad and WARDOGS. Join Discord or support us on Patreon." />
+  <link rel="icon" href="bb_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0d0b;
+      --panel: #161712;
+      --panel-2: #1c1e16;
+      --line: #3a3518;
+      --gold: #e0b423;
+      --gold-2: #f3d36a;
+      --red: #b31f24;
+      --text: #efe8d4;
+      --muted: #b7ad8f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Barlow, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--gold); }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1080px, calc(100% - 36px)); margin: 0 auto; }
+
+    nav {
+      position: sticky; top: 0; z-index: 30;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 12px 22px;
+      background: rgba(12,13,11,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+    .brand img { width: 46px; height: 46px; object-fit: contain; }
+    .brand b { font-family: Oswald, sans-serif; letter-spacing: .14em; font-size: 20px; }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: 13px; }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #161400;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 11px 16px;
+      border: 0;
+      font-size: 13px;
+    }
+    .btn.red { background: var(--red); color: #fff; }
+    .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+
+    .hero {
+      position: relative;
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+      background: #000 url("BB_Server_Invite_V3_2048x1152.png") center/cover no-repeat;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,13,11,.45) 0%, rgba(12,13,11,.82) 100%);
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 80px 20px 64px; }
+    .hero img.logo { width: 150px; margin: 0 auto 18px; filter: drop-shadow(0 10px 20px rgba(0,0,0,.6)); }
+    .hero h1 {
+      font-family: Oswald, sans-serif;
+      font-size: clamp(42px, 8vw, 84px);
+      letter-spacing: .12em;
+      line-height: .95;
+    }
+    .hero p { max-width: 640px; margin: 16px auto 28px; color: var(--muted); font-size: 18px; }
+    .cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+    .sponsor-bar {
+      background: #10110e;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+    }
+    .sponsor-bar .wrap {
+      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+      color: var(--muted); font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .sponsor-bar img { height: 28px; width: auto; }
+
+    section { padding: 72px 0; }
+    h2 {
+      font-family: Oswald, sans-serif;
+      letter-spacing: .12em;
+      font-size: 34px;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+    .lead { color: var(--muted); margin-bottom: 28px; max-width: 70ch; }
+    .notice {
+      background: #2a160f;
+      border: 1px solid #6a2a1e;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      color: #f0d2c6;
+    }
+
+    .rule {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+    .rule summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      font-family: Oswald, sans-serif;
+      letter-spacing: .08em;
+      font-size: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .rule summary::-webkit-details-marker { display: none; }
+    .rule summary::after { content: "+"; color: var(--gold); font-size: 24px; }
+    .rule[open] summary::after { content: "–"; }
+    .rule .body { padding: 0 18px 18px; color: var(--muted); }
+    .rule .body ul { margin: 10px 0 0 18px; }
+    .rule .body li { margin: 4px 0; }
+
+    .faq {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      padding: 16px 18px;
+      margin-bottom: 10px;
+    }
+    .faq h3 { font-size: 17px; margin-bottom: 6px; color: var(--gold-2); }
+    .faq p, .faq li { color: var(--muted); }
+    .faq ol, .faq ul { margin-left: 20px; margin-top: 8px; }
+    .steps { background: var(--panel); border: 1px solid var(--line); padding: 20px; margin-top: 18px; }
+
+    .games { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .game {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 22px;
+    }
+    .game h3 { font-family: Oswald, sans-serif; letter-spacing: .1em; margin-bottom: 8px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;
+    }
+    .qonzer {
+      margin-top: 28px;
+      text-align: center;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .qonzer img { height: 56px; margin: 10px auto 0; }
+
+    @media (max-width: 760px) {
+      .nav-links .hide { display: none; }
+      .games { grid-template-columns: 1fr; }
+      .brand b { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="#top">
+      <img src="bb_logo.png" alt="Blood Bound patch" />
+      <b>BLOOD BOUND</b>
+    </a>
+    <div class="nav-links">
+      <a class="hide" href="#rules">Rules</a>
+      <a class="hide" href="#faq">Report / Appeal</a>
+      <a class="btn ghost" href="https://donate.bloodbound.eu/" target="_blank" rel="noopener">Patreon</a>
+      <a class="btn" href="https://discord.bloodbound.eu/" target="_blank" rel="noopener">Join Discord</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <img class="logo" src="bb_logo.png" alt="Blood Bound" />
+      <h1>BLOOD BOUND</h1>
+      <p>Squad and WARDOGS community. Play as a team. Keep it civil. No cheats. No politics in tags.</p>
+      <div class="cta">
+        <a class="btn" href="https://discord.bloodbound.eu/" target="_blank" rel="noopener">Join Discord</a>
+        <a class="btn red" href="https://donate.bloodbound.eu/" target="_blank" rel="noopener">Support on Patreon</a>
+        <a class="btn ghost" href="#rules">Read the rules</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="sponsor-bar">
+    <div class="wrap">
+      <span>Sponsored by</span>
+      <a href="https://qonzer.com/" target="_blank" rel="noopener">
+        <img src="Exclusively_at_Qonzer.png" alt="Qonzer" style="height:36px" />
+      </a>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>THE UNIT</h2>
+      <p class="lead">Blood Bound runs public Squad and WARDOGS servers and a community Discord. Banter is fine. Harassment is not. Admins enforce the line.</p>
+      <div class="games">
+        <article class="game">
+          <h3>SQUAD</h3>
+          <p>Long-running public server. Coordinated play, Friday events, and a community that actually uses a mic.</p>
+        </article>
+        <article class="game">
+          <h3>WARDOGS</h3>
+          <p>Tactical all-out warfare. Same standards as Squad: no griefing, no cheats, no political tags.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <h2>GENERAL RULES</h2>
+      <p class="lead">These apply on Discord and on our game servers.</p>
+      <div class="notice">
+        Admins reserve the right to remove anyone whose behaviour significantly disrupts the community, gameplay or safety of others — even if the behaviour is not explicitly covered by the following rules.
+      </div>
+
+      <details class="rule" open>
+        <summary>Rule 1 — Be Respectful</summary>
+        <div class="body">
+          <p>Always be respectful towards others. Discussions and disagreements are allowed, just keep them civil.</p>
+          <p>Do not engage in personal attacks, harassment or abusive behaviour. Friendly banter and casual shit-talk towards the enemy team is allowed, provided it does not cross into harassment or discrimination (see Rules 6 and 7).</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 2 — No Spamming or Advertising</summary>
+        <div class="body">
+          <p>Excessively loud music, advertising and self-promotion — including streams, YouTube channels, Discord servers, clans or other communities — is not allowed without permission from Clan Management.</p>
+          <p>In-game usernames may include your YouTube or Twitch name, provided they otherwise follow the server rules.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 3 — No Inappropriate Content</summary>
+        <div class="body">
+          <p>Do not post, share, or distribute inappropriate or disturbing content. This includes, but is not limited to:</p>
+          <ul>
+            <li>Pornographic or sexually explicit content</li>
+            <li>Racist, discriminatory, or derogatory content</li>
+            <li>Excessive gore or disturbing imagery</li>
+            <li>Bright flashing images or content intended to cause discomfort or harm</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 4 — No Griefing</summary>
+        <div class="body">
+          <p>Do not intentionally ruin the experience of other players. This includes trolling, griefing, intentionally throwing games, or excessive toxicity intended to negatively affect teammates.</p>
+          <p>Everyone is expected to participate in good faith and contribute to a respectful gameplay environment. This rule applies to both Discord and our game servers.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 5 — No Cheats or Exploits</summary>
+        <div class="body">
+          <p>Cheats, hacks, scripts, exploits, glitches or third-party software that provide an unfair advantage are strictly prohibited.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 6 — No Discrimination</summary>
+        <div class="body">
+          <p>Discrimination of any kind is strictly prohibited.</p>
+          <p>We have zero tolerance for racism, sexism, homophobia, religious discrimination, or any other form of discriminatory or hateful behaviour.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 7 — No Politics</summary>
+        <div class="body">
+          <p>Political arguments, propaganda, extremist content, or attempts to provoke political conflict are not permitted within the community.</p>
+          <p>References in usernames, clan tags, or other in-game identifiers are also prohibited.</p>
+          <p>No references to political, extremist or controversial groups, movements or incidents — current or historical. Examples include Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK, and similar.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 8 — Appealing a Ban</summary>
+        <div class="body">
+          <p>Go to <strong>#report-appeal-faq</strong> on Discord for this info, or read the section below.</p>
+        </div>
+      </details>
+
+      <details class="rule">
+        <summary>Rule 9 — No Impersonation</summary>
+        <div class="body">
+          <p>Impersonating admins, members of Blood Bound, or Bulkhead staff will be harshly punished.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>REPORT / APPEAL FAQ</h2>
+      <p class="lead">Use the Discord channels. Do not DM admins unless they ask you to.</p>
+      <div class="notice">
+        Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay. We may timeout or ban people who spam or chat needlessly in the admin contact channel.
+      </div>
+
+      <article class="faq">
+        <h3>FAQ-1 — What is Contact an Admin used for?</h3>
+        <p>Use the Contact an Admin channel to report problematic players, appeal a ban, or ask questions that need a server admin.</p>
+      </article>
+      <article class="faq">
+        <h3>FAQ-2 — How can I report issues?</h3>
+        <p>Use Contact an Admin for issues with players, the technical-issues channel for technical problems, and the gameplay-feedback channel for gameplay related feedback.</p>
+      </article>
+      <article class="faq">
+        <h3>FAQ-3 — Can I contact admins directly?</h3>
+        <p>Please do not DM admins unless explicitly asked to as part of handling an issue with another player. Report all issues in Contact an Admin.</p>
+      </article>
+      <article class="faq">
+        <h3>FAQ-4 — How do I appeal bans?</h3>
+        <p>Go to Contact an Admin, tag the Admin role, and give us your Steam profile permalink plus a statement regarding your ban and why you feel we should consider lowering or removing it.</p>
+      </article>
+      <article class="faq">
+        <h3>FAQ-5 — Can I get help in voice chat?</h3>
+        <p>No. We keep reports in Contact an Admin, not in voice.</p>
+      </article>
+      <article class="faq">
+        <h3>FAQ-6 — How to get a SteamID64</h3>
+        <p><strong>Steam desktop:</strong> open the profile → right-click the page → Copy Page URL → paste it into steamid.io → lookup → copy steam64ID.</p>
+        <p><strong>Steam in browser:</strong> copy the profile URL → paste it into steamid.io → lookup → copy steam64ID.</p>
+      </article>
+
+      <div class="steps">
+        <h3 style="color:var(--gold);margin-bottom:8px">How to make a report</h3>
+        <ol>
+          <li>Tag the Admin role.</li>
+          <li>Provide the in-game name of the offending player.</li>
+          <li>Tell us what team they are on, and if possible which squad.</li>
+          <li>Explain in detail what the player did.</li>
+          <li>If possible, provide evidence. Video is preferred. Screenshots help.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap" style="text-align:center">
+      <h2>FALL IN</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Discord is the hub. Patreon keeps the servers running.</p>
+      <div class="cta">
+        <a class="btn" href="https://discord.bloodbound.eu/" target="_blank" rel="noopener">discord.bloodbound.eu</a>
+        <a class="btn red" href="https://donate.bloodbound.eu/" target="_blank" rel="noopener">donate.bloodbound.eu</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>Blood Bound community · Squad &amp; WARDOGS</div>
+        <div>
+          <a href="https://discord.bloodbound.eu/">Discord</a> ·
+          <a href="https://donate.bloodbound.eu/">Patreon</a> ·
+          <a href="#rules">Rules</a>
+        </div>
+      </div>
+      <div class="qonzer">
+        <div>SERVERS SPONSORED BY</div>
+        <a href="https://qonzer.com/" target="_blank" rel="noopener">
+          <img src="BB_WD_Banner_Qonzer_V1.png" alt="Sponsored by Qonzer" style="height:72px;width:auto;max-width:100%" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

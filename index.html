@@ -7,46 +7,46 @@
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--gold-2:#f3d36a;--red:#b31f24;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
+:root{--gold:#e0b423;--gold-2:#f3d36a;--red:#b31f24;--text:#f3ecd8;--muted:#cbbfa0;--discord:#5865F2}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#1a1710 url("BB_Server_Invite_V3_2048x1152.png") center top/cover fixed no-repeat}
+body::before{content:"";position:fixed;inset:0;background:rgba(18,16,10,.78);z-index:-1}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
-.wrap{width:min(1080px,calc(100% - 32px));margin:0 auto}
-nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
+.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;background:rgba(12,11,8,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(224,180,35,.25)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
 .brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
 .nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
-.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;font-size:13px;border:1px solid transparent}
+.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;font-size:13px}
 .btn.red{background:var(--red);color:#fff}
-.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(224,180,35,.35)}
 .btn.discord{background:var(--discord);color:#fff}
-.btn.off{opacity:.55;pointer-events:none}
-.hero{position:relative;min-height:52vh;display:grid;place-items:center;text-align:center;background:#000 url("BB_Server_Invite_V3_2048x1152.png") center 28%/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,11,.4),#0c0d0b)}
-.hero-inner{position:relative;z-index:1;padding:48px 20px 36px}
-.hero img.logo{width:110px;margin:0 auto 12px}
-.hero h1{font-family:Oswald,sans-serif;font-size:clamp(36px,7vw,72px);letter-spacing:.12em}
-.hero p{max-width:640px;margin:12px auto 20px;color:#d7d0bc}
+.btn.off{opacity:.5;pointer-events:none}
+.hero{min-height:58vh;display:grid;place-items:center;text-align:center;padding:56px 20px}
+.hero img.logo{width:110px;margin:0 auto 14px}
+.hero h1{font-family:Oswald,sans-serif;font-size:clamp(40px,8vw,78px);letter-spacing:.12em}
+.hero p{max-width:640px;margin:12px auto 22px;color:#ddd3b8}
 .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-section{padding:36px 0}
-h2{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:30px;margin-bottom:10px;color:var(--gold)}
-h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:0 0 8px}
-.lead{color:var(--muted);margin-bottom:16px;max-width:75ch}
-.servers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{background:var(--panel);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:10px}
-.card p{color:var(--muted)}
-.pills{display:flex;gap:8px;flex-wrap:wrap}
-.pill{border:1px solid var(--line);color:var(--gold-2);padding:4px 8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.sponsor{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
-.sponsor img{width:56px;height:56px;object-fit:contain}
-.about p{color:var(--muted);margin-bottom:12px;max-width:78ch}
-.staff{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.staff .card ul{margin:0 0 0 18px;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px}
+section{padding:48px 0}
+h2{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:32px;margin-bottom:18px;color:var(--gold)}
+h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:18px 0 8px}
+.servers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.game{padding:8px 0 4px}
+.game p{color:var(--muted);margin:8px 0 14px}
+.pills{display:flex;gap:8px;margin-bottom:12px}
+.pill{color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.sponsor{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:14px}
+.sponsor img{width:48px;height:48px;object-fit:contain}
+.about p{color:var(--muted);margin-bottom:14px;max-width:76ch}
+.staff{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;margin-top:8px}
+.staff h3{margin-top:12px}
+.staff ul{margin:0 0 8px 18px;color:var(--muted)}
+hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 28px}
+footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid rgba(224,180,35,.2)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:800px){.servers,.staff{grid-template-columns:1fr}}
 </style>
@@ -55,8 +55,8 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <nav>
 <a class="brand" href="index.html"><img src="bb_logo.png" alt="Blood Bound"><b>BLOOD BOUND</b></a>
 <div class="nav-links">
-<a href="#servers">Servers</a>
-<a href="#about">About</a>
+<a href="index.html#servers">Servers</a>
+<a href="index.html#about">About</a>
 <a href="squad-rules.html">Squad Rules</a>
 <a href="wardogs-rules.html">WARDOGS Rules</a>
 <a class="btn ghost" href="https://donate.bloodbound.eu/" target="_blank">Patreon</a>
@@ -65,7 +65,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 </nav>
 
 <header class="hero">
-<div class="hero-inner">
+<div>
 <img class="logo" src="bb_logo.png" alt="Blood Bound">
 <h1>BLOOD BOUND</h1>
 <p>Long-standing gaming Community. Public Squad and WARDOGS servers. Banter is fine. Cheating, griefing and harassment are not.</p>
@@ -80,25 +80,28 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <section id="servers">
 <div class="wrap">
 <h2>SERVERS</h2>
+<hr>
 <div class="servers">
-<article class="card">
+<article class="game">
 <h3>SQUAD</h3>
 <p>Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
+<div class="cta" style="justify-content:flex-start">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 <a class="btn ghost" href="squad-rules.html">Squad Rules</a>
+</div>
 </article>
-<article class="card">
+<article class="game">
 <h3>WARDOGS</h3>
 <p>Public EU servers. Vanilla and Hardcore. More servers if the Community wants them.</p>
 <div class="pills"><span class="pill">Vanilla</span><span class="pill">Hardcore</span></div>
 <div class="cta" style="justify-content:flex-start">
 <a class="btn ghost off">Vanilla — link soon</a>
 <a class="btn ghost off">Hardcore — link soon</a>
-</div>
 <a class="btn ghost" href="wardogs-rules.html">WARDOGS Rules</a>
+</div>
 <div class="sponsor">
 <img src="qLogo.png" alt="Qonzer">
-<p>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</p>
+<span>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</span>
 </div>
 </article>
 </div>
@@ -108,17 +111,14 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <section id="about">
 <div class="wrap about">
 <h2>ABOUT</h2>
+<hr>
 <h3>Quick Introduction</h3>
 <p>Blood Bound was originally a Project Reality clan created by PR veterans BB | Hudson "Really Evil" and ArkUTD. Since the Clan's humble origins, it has been rebuilt from the ground up, reinvigorated with a new breath of life, and has grown steadily. Over the past years BB has transformed from an underdog into one of Squad’s most successful communities and one of Squad’s most popular servers.</p>
 <p>The players wearing the BB tags are a group of like-minded individuals who have come a long way from a shared past that ties us together. BB is continually expanding, and we are always looking out for those people who play as a team, have the skill and mindset of a serious Squad player — but who also know how to have a bit of fun. We pride ourselves on our ability to balance good, coordinated team-play along with a good-natured and respectful sense of humor.</p>
 <p>Outside of Squad we also play an array of games, with members free to enjoy whatever they want to play. Our Discord is the heart of Blood Bound. This is our corner of the net where we hang out and play games with the rest of the world, and we welcome everyone to our Community.</p>
-<h3>Important Channels</h3>
-<p>Please make sure to familiarize yourself with our server and Discord rules.</p>
-<p>To report a player or appeal a ban, follow the pinned messages in <b>#squad_contact_an_admin</b>.</p>
-<p>Feedback on the Squad server (rules, map rotation, etc.) goes in <b>#squad_server_feedback</b>.</p>
 <h3>The Staff Team</h3>
 <div class="staff">
-<article class="card">
+<div>
 <h3>Founders / Clan Management</h3>
 <ul>
 <li>BB | Hudson "Really Evil"</li>
@@ -128,12 +128,10 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <li>BB | OlsgaarD "Mediocre Dane"</li>
 <li>BB | Nism "Quivering Cat"</li>
 </ul>
-</article>
-<article class="card">
+</div>
+<div>
 <h3>Lead Recruitment Officers</h3>
 <ul><li>BB | JFKMeister</li></ul>
-</article>
-<article class="card">
 <h3>Lead Admin Staff</h3>
 <ul>
 <li>BB | Mazzie "Glucose Guardian"</li>
@@ -141,14 +139,12 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <li>BB | "Big" Studdy</li>
 <li>BB | -=Blaat=- "Nice Guy"</li>
 </ul>
-</article>
-<article class="card">
 <h3>Independent Admin Affairs</h3>
 <ul>
 <li>BB | Hudson "Really Evil"</li>
 <li>BB | Notable "Gents, Real Talk"</li>
 </ul>
-</article>
+</div>
 </div>
 </div>
 </section>
@@ -156,7 +152,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <footer>
 <div class="wrap foot">
 <div>Blood Bound Community · Squad &amp; WARDOGS</div>
-<div><a href="https://discord.bloodbound.eu/">Discord</a> · <a href="squad-rules.html">Squad Rules</a> · <a href="wardogs-rules.html">WARDOGS Rules</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
+<div><a href="index.html">Home</a> · <a href="squad-rules.html">Squad Rules</a> · <a href="wardogs-rules.html">WARDOGS Rules</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
 </div>
 </footer>
 </body>

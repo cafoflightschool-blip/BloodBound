@@ -38,6 +38,12 @@ h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:18px 0 8px}
 .game p{color:var(--muted);margin:8px 0 14px}
 .pills{display:flex;gap:8px;margin-bottom:12px}
 .pill{color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.live{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;margin:10px 0 14px}
+.live strong{font-family:Oswald,sans-serif;font-size:28px;letter-spacing:.06em;color:var(--gold)}
+.live span{color:var(--muted);font-size:14px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666}
+.dot.on{background:#3dcc6f}
+.dot.off{background:#b31f24}
 .sponsor{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:14px}
 .sponsor img{width:48px;height:48px;object-fit:contain}
 .about p{color:var(--muted);margin-bottom:14px;max-width:76ch}
@@ -80,10 +86,15 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <div class="servers">
 <article class="game">
 <h3>SQUAD</h3>
+<div class="live">
+<div><span class="dot" id="sq-dot"></span><strong id="sq-count">— / —</strong></div>
+<div><span id="sq-map">Loading map…</span></div>
+</div>
 <p>Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
 <div class="cta" style="justify-content:flex-start">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 <a class="btn ghost" href="squad-rules.html">Squad Rules</a>
+<a class="btn ghost" href="https://squadbrowser.app/servers/LICENSED-1000444" target="_blank">Live stats</a>
 </div>
 </article>
 <article class="game">
@@ -146,5 +157,33 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <div><a href="index.html">Home</a> · <a href="squad-rules.html">Squad Rules</a> · <a href="wardogs-rules.html">WARDOGS Rules</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
 </div>
 </footer>
+<script>
+const countEl = document.getElementById("sq-count");
+const mapEl = document.getElementById("sq-map");
+const dotEl = document.getElementById("sq-dot");
+const BM = "https://api.battlemetrics.com/servers/2272069";
+
+async function loadSquad(){
+  try{
+    const res = await fetch(BM);
+    if(!res.ok) throw new Error("bad");
+    const json = await res.json();
+    const a = json.data.attributes;
+    const players = a.players ?? 0;
+    const max = a.maxPlayers ?? 100;
+    const map = (a.details && (a.details.map || a.details.layer)) || "Unknown map";
+    const online = a.status === "online";
+    countEl.textContent = players + " / " + max;
+    mapEl.textContent = map;
+    dotEl.className = "dot " + (online ? "on" : "off");
+  }catch(e){
+    countEl.textContent = "— / —";
+    mapEl.textContent = "Stats unavailable";
+    dotEl.className = "dot off";
+  }
+}
+loadSquad();
+setInterval(loadSquad, 60000);
+</script>
 </body>
 </html>

@@ -38,16 +38,14 @@ h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:0 0 8px}
 .sub{color:var(--muted);margin-bottom:16px}
 hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 22px}
 .block{margin-bottom:36px}
-.live{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin:8px 0 12px}
-.live strong{font-family:Oswald,sans-serif;font-size:30px;letter-spacing:.06em;color:var(--gold)}
-.live span{color:var(--muted);font-size:14px}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666;vertical-align:middle}
-.dot.on{background:#3dcc6f}
-.dot.off{background:#b31f24}
-.banner{max-width:500px;height:auto;margin:8px 0 14px;border:1px solid rgba(224,180,35,.2)}
+.widget{width:100%;max-width:500px;height:82px;border:0;margin:6px 0 14px;background:transparent}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .box{border-top:1px solid rgba(224,180,35,.25);padding:16px 0}
 .box p{color:var(--muted);margin:0 0 12px}
+.live{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin:8px 0 12px}
+.live strong{font-family:Oswald,sans-serif;font-size:26px;color:var(--gold)}
+.live span{color:var(--muted);font-size:14px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666}
 .sponsor{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:14px}
 .sponsor img{width:48px;height:48px;object-fit:contain}
 .about p{color:var(--muted);margin-bottom:14px;max-width:76ch}
@@ -90,11 +88,7 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <div class="block">
 <h2>SQUAD</h2>
 <hr>
-<div class="live">
-<div><span class="dot" id="sq-dot"></span><strong id="sq-count">— / —</strong></div>
-<div><span id="sq-map">Loading…</span></div>
-</div>
-<img class="banner" id="sq-banner" alt="Squad server status" src="https://cdn.battlemetrics.com/b/horizontal500x80/2272069.png?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423">
+<iframe class="widget" title="Squad live players" src="https://cdn.battlemetrics.com/b/horizontal500x80/2272069.html?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423"></iframe>
 <p class="sub">Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
 <div class="cta">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
@@ -106,27 +100,21 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 
 <div class="block">
 <h2>WARDOGS</h2>
-<p class="sub">Public EU servers. Add more boxes under this row when new servers go live.</p>
+<p class="sub">Public EU servers. Copy a box below when you add another server.</p>
 <hr>
 <div class="grid">
-<article class="box" data-bm="">
+<article class="box">
 <h3>Vanilla</h3>
-<div class="live">
-<div><span class="dot"></span><strong>— / —</strong></div>
-<div><span>Stats soon</span></div>
-</div>
+<div class="live"><div><span class="dot"></span><strong>— / —</strong></div><div><span>Stats soon</span></div></div>
 <p>Standard WARDOGS ruleset. Join link and live count go here when the server is up.</p>
 <div class="cta">
 <a class="btn ghost off">Join Vanilla</a>
 <a class="btn ghost" href="wardogs-rules.html">Rules</a>
 </div>
 </article>
-<article class="box" data-bm="">
+<article class="box">
 <h3>Hardcore</h3>
-<div class="live">
-<div><span class="dot"></span><strong>— / —</strong></div>
-<div><span>Stats soon</span></div>
-</div>
+<div class="live"><div><span class="dot"></span><strong>— / —</strong></div><div><span>Stats soon</span></div></div>
 <p>Hardcore WARDOGS ruleset. Join link and live count go here when the server is up.</p>
 <div class="cta">
 <a class="btn ghost off">Join Hardcore</a>
@@ -190,43 +178,5 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <div><a href="index.html">Home</a> · <a href="squad-rules.html">Squad Rules</a> · <a href="wardogs-rules.html">WARDOGS Rules</a> · <a href="https://donate.bloodbound.eu/">Patreon</a></div>
 </div>
 </footer>
-
-<script>
-const ID = "2272069";
-const urls = [
-  "https://api.battlemetrics.com/servers/" + ID,
-  "https://corsproxy.io/?https://api.battlemetrics.com/servers/" + ID
-];
-
-async function readServer(url){
-  const res = await fetch(url);
-  if(!res.ok) throw new Error("bad");
-  const json = await res.json();
-  return json.data.attributes;
-}
-
-async function fill(countEl, mapEl, dotEl){
-  for(const url of urls){
-    try{
-      const a = await readServer(url);
-      countEl.textContent = (a.players ?? 0) + " / " + (a.maxPlayers ?? 0);
-      mapEl.textContent = (a.details && (a.details.map || a.details.layer)) || "Unknown map";
-      dotEl.className = "dot " + (a.status === "online" ? "on" : "off");
-      return;
-    }catch(e){}
-  }
-  countEl.textContent = "see banner";
-  mapEl.textContent = "Live count is on the BattleMetrics banner";
-  dotEl.className = "dot";
-}
-
-function refresh(){
-  fill(document.getElementById("sq-count"), document.getElementById("sq-map"), document.getElementById("sq-dot"));
-  const ban = document.getElementById("sq-banner");
-  if(ban) ban.src = "https://cdn.battlemetrics.com/b/horizontal500x80/2272069.png?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423&t=" + Date.now();
-}
-refresh();
-setInterval(refresh, 60000);
-</script>
 </body>
 </html>

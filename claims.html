@@ -7,12 +7,12 @@
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--gold-2:#f3d36a;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
+:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
-.wrap{width:min(900px,calc(100% - 32px));margin:0 auto}
+.wrap{width:min(820px,calc(100% - 32px));margin:0 auto}
 nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
@@ -22,16 +22,16 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 .btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;font-size:13px}
 .btn.discord{background:var(--discord);color:#fff}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-header{padding:36px 0 10px}
-h1{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:34px;color:var(--gold);margin-bottom:8px}
-.lead{color:var(--muted);margin-bottom:20px}
-.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin-bottom:18px;color:#f0d2c6}
-.faction{background:var(--panel);border:1px solid var(--line);margin-bottom:16px;overflow:hidden}
-.faction img{width:100%;height:auto}
-.faction .body{padding:14px 16px}
-.faction h2{font-family:Oswald,sans-serif;letter-spacing:.08em;font-size:22px;margin-bottom:8px}
-.faction p{color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px;margin-top:20px}
+header{padding:28px 0 8px}
+h1{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:32px;color:var(--gold);margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:16px}
+.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin-bottom:16px;color:#f0d2c6}
+.faction{background:var(--panel);border:1px solid var(--line);margin-bottom:14px;overflow:hidden}
+.faction img{width:100%;height:150px;object-fit:cover;object-position:center}
+.faction .body{padding:12px 14px}
+.faction h2{font-family:Oswald,sans-serif;letter-spacing:.08em;font-size:20px;margin-bottom:6px}
+.faction p{color:var(--muted);font-size:15px}
+footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px;margin-top:16px}
 </style>
 </head>
 <body>
@@ -68,7 +68,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <article class="faction"><img src="CRF.png" alt="Canadian Resistance Forces"><div class="body"><h2>Canadian Resistance Forces</h2><p><b>Reconnaissance Vehicles:</b> Coyote<br><b>One-Man Vehicles:</b> M1151 TOW</p></div></article>
 
 <article class="faction"><img src="RAF.png" alt="Russian Airborne Forces"><div class="body"><h2>Russian Airborne Forces</h2><p><b>Main Battle Tanks:</b> T72<br><b>Mobile Gun Systems:</b> SPRUT<br><b>Infantry Fighting Vehicles:</b> BMD4, BMD1<br><b>One-Man Vehicles:</b> BTRMDM, BTRZD<br><b>Helicopters:</b> MI8</p></div></article>
-  
+
 <article class="faction"><img src="RGF.png" alt="Russian Ground Forces"><div class="body"><h2>Russian Ground Forces</h2><p><b>Main Battle Tanks:</b> T72, T90<br><b>Infantry Fighting Vehicles:</b> BMP3, BMP2M, BMP2, BMP1AM, BMP1<br><b>Armored Personnel Carriers:</b> BTR82, MTLB 6MB, BTR80<br><b>One-Man Vehicles:</b> BRDM, MTLB 6MA, MTLB PKT, MTLB VMK, SPANDREL, TIGR RWS<br><b>Helicopters:</b> MI8</p></div></article>
 
 <article class="faction"><img src="GFI.png" alt="Ground Forces of Iran"><div class="body"><h2>Ground Forces of Iran</h2><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>One-Man Vehicles:</b> MT-LB 6MA S8, BRDM-2 UB-32, SAFIR KORNET<br><b>Helicopters:</b> UH1H</p></div></article>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blood Bound — Vehicle Claims</title>
+<link rel="icon" href="bb_logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--gold-2:#f3d36a;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+.wrap{width:min(900px,calc(100% - 32px));margin:0 auto}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.brand img{width:40px;height:40px;object-fit:contain}
+.brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
+.nav-links{display:flex;gap:14px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;font-size:13px}
+.btn.discord{background:var(--discord);color:#fff}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+header{padding:36px 0 10px}
+h1{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:34px;color:var(--gold);margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:20px}
+.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin-bottom:18px;color:#f0d2c6}
+.faction{background:var(--panel);border:1px solid var(--line);margin-bottom:16px;overflow:hidden}
+.faction img{width:100%;height:auto}
+.faction .body{padding:14px 16px}
+.faction h2{font-family:Oswald,sans-serif;letter-spacing:.08em;font-size:22px;margin-bottom:8px}
+.faction p{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px;margin-top:20px}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="index.html"><img src="bb_logo.png" alt="Blood Bound"><b>BLOOD BOUND</b></a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="btn ghost" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad</a>
+<a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Discord</a>
+</div>
+</nav>
+
+<header>
+<div class="wrap">
+<h1>VEHICLE CLAIMS</h1>
+<p class="lead">Squad server — list of valid vehicle claims.</p>
+<div class="notice">Any unlisted vehicle cannot be claimed and is therefore available to be used by the whole team.</div>
+</div>
+</header>
+
+<main class="wrap">
+<article class="faction"><img src="USA.png" alt="United States Army"><div class="body"><h2>United States Army</h2><p><b>Main Battle Tanks:</b> M1A2<br><b>Mobile Gun Systems:</b> MGS<br><b>Infantry Fighting Vehicles:</b> M2A3<br><b>Armored Personnel Carriers:</b> M1126 M240, M1126 M2<br><b>Reconnaissance Vehicles:</b> M7A3<br><b>One-Man Vehicles:</b> M1151 TOW, M1151 CROWS, MATV TOW, MATV CROWS, M1064<br><b>Helicopters:</b> UH60</p></div></article>
+
+<article class="faction"><img src="USMC.png" alt="United States Marine Corps"><div class="body"><h2>United States Marine Corps</h2><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> LAV25<br><b>One-Man Vehicles:</b> AAVP, M1151 TOW, M1151 CROWS, MRAP TOW, MRAP CROWS<br><b>Helicopters:</b> UH1Y</p></div></article>
+
+<article class="faction"><img src="ADF.png" alt="Australian Defence Force"><div class="body"><h2>Australian Defence Force</h2><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> ASLAV<br><b>One-Man Vehicles:</b> PMV RWS, M1151 TOW<br><b>Helicopters:</b> MRH90, UH60M</p></div></article>
+
+<article class="faction"><img src="BAF.png" alt="British Armed Forces"><div class="body"><h2>British Armed Forces</h2><p><b>Main Battle Tanks:</b> FV4034<br><b>Infantry Fighting Vehicles:</b> FV510 UA, FV510<br><b>Armored Personnel Carriers:</b> FV423 L111A1 RWS<br><b>Reconnaissance Vehicles:</b> FV107<br><b>One-Man Vehicles:</b> FV432 L37A1 RWS, LPPV RWS, M1151 TOW<br><b>Helicopters:</b> SA330</p></div></article>
+
+<article class="faction"><img src="AFU.png" alt="Armed Forces of Ukraine"><div class="body"><h2>Armed Forces of Ukraine</h2><p><b>Main Battle Tanks:</b> T64<br><b>Infantry Fighting Vehicles:</b> BTR4, BMP1TS, BMP2, BMP1<br><b>One-Man Vehicles:</b> BRDM, Technical Kornet, MTLB PKT, BM21 Grad<br><b>Helicopters:</b> Mi8</p></div></article>
+
+<article class="faction"><img src="CAF.png" alt="Canadian Armed Forces"><div class="body"><h2>Canadian Armed Forces</h2><p><b>Main Battle Tanks:</b> LEOPARD2<br><b>Infantry Fighting Vehicles:</b> LAV6<br><b>Reconnaissance Vehicles:</b> Coyote<br><b>Armored Personnel Carriers:</b> LAV III C6, LAV III M2<br><b>One-Man Vehicles:</b> TAPV, TLAV, M1151 TOW<br><b>Transport Helicopters:</b> CH146<br><b>CAS Helicopters:</b> CH146 CAS</p></div></article>
+
+<article class="faction"><img src="RAF.png" alt="Canadian Resistance Forces"><div class="body"><h2>Canadian Resistance Forces</h2><p><b>Reconnaissance Vehicles:</b> Coyote<br><b>One-Man Vehicles:</b> M1151 TOW</p></div></article>
+
+<article class="faction"><div class="body"><h2>Russian Airborne Forces</h2><p><b>Main Battle Tanks:</b> T72<br><b>Mobile Gun Systems:</b> SPRUT<br><b>Infantry Fighting Vehicles:</b> BMD4, BMD1<br><b>One-Man Vehicles:</b> BTRMDM, BTRZD<br><b>Helicopters:</b> MI8</p></div></article>
+
+<article class="faction"><img src="RGF.png" alt="Russian Ground Forces"><div class="body"><h2>Russian Ground Forces</h2><p><b>Main Battle Tanks:</b> T72, T90<br><b>Infantry Fighting Vehicles:</b> BMP3, BMP2M, BMP2, BMP1AM, BMP1<br><b>Armored Personnel Carriers:</b> BTR82, MTLB 6MB, BTR80<br><b>One-Man Vehicles:</b> BRDM, MTLB 6MA, MTLB PKT, MTLB VMK, SPANDREL, TIGR RWS<br><b>Helicopters:</b> MI8</p></div></article>
+
+<article class="faction"><img src="GFI.png" alt="Ground Forces of Iran"><div class="body"><h2>Ground Forces of Iran</h2><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>One-Man Vehicles:</b> MT-LB 6MA S8, BRDM-2 UB-32, SAFIR KORNET<br><b>Helicopters:</b> UH1H</p></div></article>
+
+<article class="faction"><img src="TLF.png" alt="Turkish Land Forces"><div class="body"><h2>Turkish Land Forces</h2><p><b>Main Battle Tanks:</b> M60<br><b>Infantry Fighting Vehicles:</b> ACV15 25mm, PARS 25mm<br><b>Armored Personnel Carriers:</b> PARS M2, PARS MG3, PARS MK19<br><b>One-Man Vehicles:</b> COBRA RWS M2, COBRA RWS MG3<br><b>Helicopters:</b> UH60</p></div></article>
+
+<article class="faction"><img src="MEI.png" alt="Middle Eastern Insurgents"><div class="body"><h2>Middle Eastern Insurgents</h2><p><b>Main Battle Tanks:</b> T62<br><b>Infantry Fighting Vehicles:</b> BMP1<br><b>Armored Personnel Carriers:</b> BTR80<br><b>One-Man Vehicles:</b> MTLB PKT, BMP1 ZU23, MTLB ZU23, BRDM2, TECHIE KORNET, TECHIE SPG, TECHIE UB32, TECHIE ZU23, TECHIE BMP1, URAL ZU23</p></div></article>
+
+<article class="faction"><img src="IMF.png" alt="Irregular Militia Forces"><div class="body"><h2>Irregular Militia Forces</h2><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>Armored Personnel Carriers:</b> BTR80, MTLB 6MB<br><b>One-Man Vehicles:</b> MTLB 6MA, MTLB VMK, MTLB ZU23, BM21, BMP1 ZU23, BRDM2, TECHIE SPG9, TECHIE KORNET, TECHIE ZU23, URAL ZU23</p></div></article>
+
+<article class="faction"><img src="PLA.png" alt="People’s Liberation Army"><div class="body"><h2>People’s Liberation Army</h2><p><b>Main Battle Tanks:</b> ZTZ<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL, ZSL92 IFV, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></div></article>
+
+<article class="faction"><img src="PLAGF.png" alt="PLA Amphibious Ground Force"><div class="body"><h2>PLA Amphibious Ground Force</h2><p><b>Main Battle Tanks:</b> ZTZ<br><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></div></article>
+
+<article class="faction"><img src="PLANMC.png" alt="PLA Navy Marine Corps"><div class="body"><h2>PLA Navy Marine Corps</h2><p><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8J</p></div></article>
+
+<article class="faction"><img src="WPMC.png" alt="Western Private Military Contractors"><div class="body"><h2>Western Private Military Contractors</h2><p><b>Main Battle Tanks:</b> M60<br><b>One-Man Vehicles:</b> M1117, M113A3 M2, M1151 TOW<br><b>Helicopters:</b> Raven, Loach Scout<br><b>CAS Helicopters:</b> Loach CAS</p></div></article>
+</main>
+
+<footer>
+<div class="wrap"><a href="index.html">← Back to Home</a></div>
+</footer>
+</body>
+</html>

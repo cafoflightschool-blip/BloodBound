@@ -38,12 +38,13 @@ h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:0 0 8px}
 .sub{color:var(--muted);margin-bottom:16px}
 hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 22px}
 .block{margin-bottom:36px}
-.live{display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;margin:8px 0 12px}
+.live{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin:8px 0 12px}
 .live strong{font-family:Oswald,sans-serif;font-size:30px;letter-spacing:.06em;color:var(--gold)}
 .live span{color:var(--muted);font-size:14px}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666;vertical-align:middle}
 .dot.on{background:#3dcc6f}
 .dot.off{background:#b31f24}
+.banner{max-width:500px;height:auto;margin:8px 0 14px;border:1px solid rgba(224,180,35,.2)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .box{border-top:1px solid rgba(224,180,35,.25);padding:16px 0}
 .box p{color:var(--muted);margin:0 0 12px}
@@ -91,8 +92,9 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 <hr>
 <div class="live">
 <div><span class="dot" id="sq-dot"></span><strong id="sq-count">— / —</strong></div>
-<div><span id="sq-map">Loading map…</span></div>
+<div><span id="sq-map">Loading…</span></div>
 </div>
+<img class="banner" id="sq-banner" alt="Squad server status" src="https://cdn.battlemetrics.com/b/horizontal500x80/2272069.png?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423">
 <p class="sub">Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
 <div class="cta">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
@@ -190,36 +192,38 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 </footer>
 
 <script>
-async function fill(id, countEl, mapEl, dotEl){
-  try{
-    const res = await fetch("https://api.battlemetrics.com/servers/" + id);
-    if(!res.ok) throw new Error("bad");
-    const a = (await res.json()).data.attributes;
-    const players = a.players ?? 0;
-    const max = a.maxPlayers ?? 0;
-    const map = (a.details && (a.details.map || a.details.layer)) || "Unknown map";
-    countEl.textContent = players + " / " + max;
-    mapEl.textContent = map;
-    dotEl.className = "dot " + (a.status === "online" ? "on" : "off");
-  }catch(e){
-    countEl.textContent = "— / —";
-    mapEl.textContent = "Stats unavailable";
-    dotEl.className = "dot off";
-  }
+const ID = "2272069";
+const urls = [
+  "https://api.battlemetrics.com/servers/" + ID,
+  "https://corsproxy.io/?https://api.battlemetrics.com/servers/" + ID
+];
+
+async function readServer(url){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error("bad");
+  const json = await res.json();
+  return json.data.attributes;
 }
 
-function loadBox(box){
-  const id = box.getAttribute("data-bm");
-  if(!id) return;
-  const strong = box.querySelector("strong");
-  const map = box.querySelector(".live span:not(.dot)");
-  const dot = box.querySelector(".dot");
-  fill(id, strong, map, dot);
+async function fill(countEl, mapEl, dotEl){
+  for(const url of urls){
+    try{
+      const a = await readServer(url);
+      countEl.textContent = (a.players ?? 0) + " / " + (a.maxPlayers ?? 0);
+      mapEl.textContent = (a.details && (a.details.map || a.details.layer)) || "Unknown map";
+      dotEl.className = "dot " + (a.status === "online" ? "on" : "off");
+      return;
+    }catch(e){}
+  }
+  countEl.textContent = "see banner";
+  mapEl.textContent = "Live count is on the BattleMetrics banner";
+  dotEl.className = "dot";
 }
 
 function refresh(){
-  fill("2272069", document.getElementById("sq-count"), document.getElementById("sq-map"), document.getElementById("sq-dot"));
-  document.querySelectorAll(".box[data-bm]").forEach(loadBox);
+  fill(document.getElementById("sq-count"), document.getElementById("sq-map"), document.getElementById("sq-dot"));
+  const ban = document.getElementById("sq-banner");
+  if(ban) ban.src = "https://cdn.battlemetrics.com/b/horizontal500x80/2272069.png?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423&t=" + Date.now();
 }
 refresh();
 setInterval(refresh, 60000);

@@ -7,15 +7,14 @@
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#e0b423;--gold-2:#f3d36a;--red:#b31f24;--text:#f3ecd8;--muted:#cbbfa0;--discord:#5865F2}
+:root{--gold:#e0b423;--gold-2:#f3d36a;--red:#b31f24;--text:#f3ecd8;--muted:#cbbfa0;--discord:#5865F2;--bg:#14120c}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Barlow,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#1a1710 url("BB_Server_Invite_V3_2048x1152.png") center top/cover fixed no-repeat}
-body::before{content:"";position:fixed;inset:0;background:rgba(18,16,10,.78);z-index:-1}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--text);line-height:1.6;background:var(--bg)}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
 .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
-nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;background:rgba(12,11,8,.88);border-bottom:1px solid rgba(224,180,35,.25)}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;background:rgba(12,11,8,.94);border-bottom:1px solid rgba(224,180,35,.25)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
 .brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
@@ -26,34 +25,32 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(224,180,35,.35)}
 .btn.discord{background:var(--discord);color:#fff}
 .btn.off{opacity:.5;pointer-events:none}
-.hero{min-height:58vh;display:grid;place-items:center;text-align:center;padding:56px 20px}
-.hero img.logo{width:110px;margin:0 auto 14px}
+.hero{position:relative;min-height:78vh;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:48px 20px 0;background:#000 url("BB_Server_Invite_V3_2048x1152.png") center bottom / cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,12,.55) 0%,rgba(20,18,12,.28) 42%,rgba(20,18,12,.15) 70%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:1;padding-top:8px}
+.hero img.logo{width:168px;margin:0 auto 16px}
 .hero h1{font-family:Oswald,sans-serif;font-size:clamp(40px,8vw,78px);letter-spacing:.12em}
 .hero p{max-width:640px;margin:12px auto 22px;color:#ddd3b8}
 .cta{display:flex;gap:10px;flex-wrap:wrap}
 .hero .cta{justify-content:center}
-section{padding:48px 0}
+.hero-spacer{flex:1;min-height:220px;position:relative;z-index:1}
+section{padding:36px 0 48px;background:var(--bg)}
 h2{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:32px;margin-bottom:8px;color:var(--gold)}
 h3{font-family:Oswald,sans-serif;letter-spacing:.08em;margin:0 0 8px}
 .sub{color:var(--muted);margin-bottom:16px}
 hr{border:0;border-top:1px solid rgba(224,180,35,.2);margin:8px 0 22px}
 .block{margin-bottom:36px}
-.widget{width:100%;max-width:500px;height:82px;border:0;margin:6px 0 14px;background:transparent}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .box{border-top:1px solid rgba(224,180,35,.25);padding:16px 0}
 .box p{color:var(--muted);margin:0 0 12px}
-.live{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin:8px 0 12px}
-.live strong{font-family:Oswald,sans-serif;font-size:26px;color:var(--gold)}
-.live span{color:var(--muted);font-size:14px}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#666}
 .sponsor{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-size:14px}
 .sponsor img{width:48px;height:48px;object-fit:contain}
 .about p{color:var(--muted);margin-bottom:14px;max-width:76ch}
 .staff{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
 .staff ul{margin:0 0 8px 18px;color:var(--muted)}
-footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid rgba(224,180,35,.2)}
+footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid rgba(224,180,35,.2);background:var(--bg)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:800px){.grid,.staff{grid-template-columns:1fr}}
+@media(max-width:800px){.grid,.staff{grid-template-columns:1fr}.hero{min-height:70vh}.hero-spacer{min-height:140px}.hero img.logo{width:132px}}
 </style>
 </head>
 <body>
@@ -70,64 +67,56 @@ footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 </nav>
 
 <header class="hero">
-<div>
+<div class="hero-inner">
 <img class="logo" src="bb_logo.png" alt="Blood Bound">
 <h1>BLOOD BOUND</h1>
 <p>Long-standing gaming Community. Public Squad and WARDOGS servers. Banter is fine. Cheating, griefing and harassment are not.</p>
 <div class="cta">
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Join Discord</a>
-<a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 <a class="btn red" href="https://donate.bloodbound.eu/" target="_blank">Patreon</a>
 </div>
 </div>
+<div class="hero-spacer"></div>
 </header>
 
 <section id="servers">
 <div class="wrap">
-
 <div class="block">
 <h2>SQUAD</h2>
 <hr>
-<iframe class="widget" title="Squad live players" src="https://cdn.battlemetrics.com/b/horizontal500x80/2272069.html?foreground=%23EFE8D4&background=%23161112&accent=%23E0B423"></iframe>
 <p class="sub">Experienced preferred public server. Experienced players and SLs, still open to people who want to learn and play properly. Active admins.</p>
 <div class="cta">
 <a class="btn" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad Server</a>
 <a class="btn ghost" href="squad-rules.html">Squad Rules</a>
-<a class="btn ghost" href="https://squadbrowser.app/servers/LICENSED-1000444" target="_blank">SquadBrowser</a>
-<a class="btn ghost" href="https://www.battlemetrics.com/servers/squad/2272069" target="_blank">BattleMetrics</a>
 </div>
 </div>
-
 <div class="block">
 <h2>WARDOGS</h2>
-<p class="sub">Public EU servers. Copy a box below when you add another server.</p>
+<p class="sub">Public EU servers. Vanilla and Hardcore.</p>
 <hr>
 <div class="grid">
 <article class="box">
 <h3>Vanilla</h3>
-<div class="live"><div><span class="dot"></span><strong>— / —</strong></div><div><span>Stats soon</span></div></div>
-<p>Standard WARDOGS ruleset. Join link and live count go here when the server is up.</p>
+<p>Standard WARDOGS ruleset. Join link goes here when the server is up.</p>
 <div class="cta">
 <a class="btn ghost off">Join Vanilla</a>
-<a class="btn ghost" href="wardogs-rules.html">Rules</a>
+<a class="btn ghost" href="wardogs-rules.html">WARDOGS Rules</a>
 </div>
 </article>
 <article class="box">
 <h3>Hardcore</h3>
-<div class="live"><div><span class="dot"></span><strong>— / —</strong></div><div><span>Stats soon</span></div></div>
-<p>Hardcore WARDOGS ruleset. Join link and live count go here when the server is up.</p>
+<p>Hardcore WARDOGS ruleset. Join link goes here when the server is up.</p>
 <div class="cta">
 <a class="btn ghost off">Join Hardcore</a>
-<a class="btn ghost" href="wardogs-rules.html">Rules</a>
+<a class="btn ghost" href="wardogs-rules.html">WARDOGS Rules</a>
 </div>
 </article>
 </div>
 <div class="sponsor">
 <img src="qLogo.png" alt="Qonzer">
-<span>WARDOGS servers sponsored by Qonzer. Squad hosting is separate.</span>
+<span>WARDOGS servers sponsored by Qonzer.</span>
 </div>
 </div>
-
 </div>
 </section>
 

@@ -7,14 +7,15 @@
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--gold-2:#f3d36a;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
+:root{--gold:#e0b423;--gold-2:#f3d36a;--text:#f3ecd8;--muted:#d0c4a6;--discord:#5865F2}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#14140f url("WardogsMainWallpaper.png") center/cover fixed no-repeat}
+body::before{content:"";position:fixed;inset:0;background:rgba(16,16,10,.82);z-index:-1}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
 .wrap{width:min(860px,calc(100% - 32px));margin:0 auto}
-nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;background:rgba(12,11,8,.9);border-bottom:1px solid rgba(224,180,35,.25)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
 .brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
@@ -22,20 +23,20 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:12px}
 .btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;font-size:12px}
 .btn.discord{background:var(--discord);color:#fff}
-.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-header{padding:28px 0 8px}
-h1{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:34px;color:var(--gold)}
-h2{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:24px;color:var(--gold);margin:28px 0 10px}
-.lead,.rule p,.rule li{color:var(--muted)}
-.jump{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
-.jump a{border:1px solid var(--line);padding:6px 10px;text-decoration:none;color:var(--gold-2);font-size:13px;font-weight:700}
-.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin:12px 0 16px;color:#f0d2c6}
-.rule{background:var(--panel);border:1px solid var(--line);margin-bottom:8px;padding:12px 14px}
-.rule b{display:block;margin-bottom:4px}
-.rule ul{margin:6px 0 0 18px}
-.sponsor{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
-.sponsor img{width:56px;height:56px;object-fit:contain}
-footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px;margin-top:24px}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(224,180,35,.35)}
+header{padding:28px 0 10px}
+h1{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:36px;color:var(--gold)}
+.lead{color:var(--muted);margin:8px 0 16px}
+.jump a{color:var(--gold-2);text-decoration:none;margin-right:14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.banner{width:100%;height:150px;object-fit:cover;margin:18px 0 16px}
+.notice{color:#f0d2c6;margin:0 0 18px;font-style:italic}
+.item{padding:12px 0 12px 14px;border-left:2px solid rgba(224,180,35,.55);margin-bottom:10px}
+.item b{display:block;font-family:Oswald,sans-serif;letter-spacing:.06em;margin-bottom:4px}
+.item p,.item li{color:var(--muted)}
+.item ul{margin:6px 0 0 18px}
+.sponsor{display:flex;align-items:center;gap:10px;margin-top:22px;color:var(--muted)}
+.sponsor img{width:48px;height:48px;object-fit:contain}
+footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,35,.2);margin-top:28px}
 </style>
 </head>
 <body>
@@ -45,7 +46,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <a href="index.html">Home</a>
 <a href="squad-rules.html">Squad Rules</a>
 <a href="#rules">Rules</a>
-<a href="#faq">Rules FAQ</a>
+<a href="#faq">FAQ</a>
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Discord</a>
 </div>
 </nav>
@@ -53,101 +54,39 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <header>
 <div class="wrap">
 <h1>WARDOGS RULES</h1>
-<p class="lead">These rules apply on Blood Bound WARDOGS servers (Vanilla and Hardcore) and in related Discord channels.</p>
-<div class="jump">
-<a href="#rules">Rules</a>
-<a href="#faq">Rules FAQ</a>
-</div>
+<p class="lead">Vanilla and Hardcore. Same Community standard.</p>
+<div class="jump"><a href="#rules">Rules</a><a href="#faq">Rules FAQ</a></div>
 </div>
 </header>
 
 <main class="wrap">
-<section id="rules">
-<h2>RULES</h2>
-<div class="notice">Admins reserve the right to remove anyone whose behaviour significantly disrupts the Community, gameplay or safety of others — even if the behaviour is not explicitly covered by the following rules.</div>
-
-<div class="rule"><b>Rule 1 — Be Respectful</b>
-<p>Always be respectful towards others. Discussions and disagreements are allowed, just keep them civil.</p>
-<p>Do not engage in personal attacks, harassment or abusive behaviour. Friendly banter and casual shit-talk towards the enemy team is allowed, provided it does not cross into harassment or discrimination (see Rules 6 and 7).</p>
-</div>
-
-<div class="rule"><b>Rule 2 — No Spamming or Advertising</b>
-<p>Excessively loud music, advertising and self-promotion — including streams, YouTube channels, Discord servers, clans or other communities — is not allowed without permission from Clan Management.</p>
-<p>In-game usernames may include your YouTube or Twitch name, provided they otherwise follow the server rules.</p>
-</div>
-
-<div class="rule"><b>Rule 3 — No Inappropriate Content</b>
-<p>Do not post, share, or distribute inappropriate or disturbing content. This includes, but is not limited to:</p>
-<ul>
-<li>Pornographic or sexually explicit content</li>
-<li>Racist, discriminatory, or derogatory content</li>
-<li>Excessive gore or disturbing imagery</li>
-<li>Bright flashing images or content intended to cause discomfort or harm</li>
-</ul>
-</div>
-
-<div class="rule"><b>Rule 4 — No Griefing</b>
-<p>Do not intentionally ruin the experience of other players. This includes trolling, griefing, intentionally throwing games, or excessive toxicity intended to negatively affect teammates.</p>
-<p>This rule applies to both Discord and our game servers.</p>
-</div>
-
-<div class="rule"><b>Rule 5 — No Cheats or Exploits</b>
-<p>Cheats, hacks, scripts, exploits, glitches or third-party software that provide an unfair advantage are strictly prohibited.</p>
-</div>
-
-<div class="rule"><b>Rule 6 — No Discrimination</b>
-<p>Discrimination of any kind is strictly prohibited. Zero tolerance for racism, sexism, homophobia, religious discrimination, or any other hateful behaviour.</p>
-</div>
-
-<div class="rule"><b>Rule 7 — No Politics</b>
-<p>Political arguments, propaganda, extremist content, or attempts to provoke political conflict are not permitted.</p>
-<p>References in usernames, clan tags, or other in-game identifiers are also prohibited.</p>
-<p>No references to political, extremist or controversial groups, movements or incidents — current or historical. Examples include Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK, and similar.</p>
-</div>
-
-<div class="rule"><b>Rule 8 — Appealing a Ban</b>
-<p>Use the Rules FAQ below. Do not DM admins unless they ask you to.</p>
-</div>
-
-<div class="rule"><b>Rule 9 — No Impersonation</b>
-<p>Impersonating admins, members of Blood Bound, or Bulkhead staff will be harshly punished.</p>
-</div>
-</section>
+<img class="banner" id="rules" src="wardogsrules.png" alt="WARDOGS General Rules">
+<p class="notice">Admins reserve the right to remove anyone whose behaviour significantly disrupts the Community, gameplay or safety of others — even if it is not listed below.</p>
+<div class="item"><b>Rule 1 — Be Respectful</b><p>Discussions are allowed. Keep them civil. No personal attacks or harassment. Banter at the enemy is fine until it becomes harassment or discrimination.</p></div>
+<div class="item"><b>Rule 2 — No Spamming or Advertising</b><p>No loud music, ads or recruiting without Clan Management permission. Stream names in-game are fine if they follow the rules.</p></div>
+<div class="item"><b>Rule 3 — No Inappropriate Content</b><p>No porn, racist content, excessive gore, or flashing images meant to harm.</p></div>
+<div class="item"><b>Rule 4 — No Griefing</b><p>No trolling, throwing or toxicity aimed at teammates. Applies on Discord and the servers.</p></div>
+<div class="item"><b>Rule 5 — No Cheats or Exploits</b><p>Cheats, hacks, scripts, exploits, glitches or unfair third-party tools are banned.</p></div>
+<div class="item"><b>Rule 6 — No Discrimination</b><p>Zero-tolerance for racism, sexism, homophobia, religious discrimination or hate.</p></div>
+<div class="item"><b>Rule 7 — No Politics</b><p>No political arguments or extremist references in chat, names or tags. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
+<div class="item"><b>Rule 8 — Appealing a Ban</b><p>Use the Rules FAQ. Do not DM admins unless they ask.</p></div>
+<div class="item"><b>Rule 9 — No Impersonation</b><p>Impersonating Blood Bound admins/members or Bulkhead staff will be harshly punished.</p></div>
 
 <section id="faq">
-<h2>RULES FAQ</h2>
-<div class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay. Do not spam reports.</div>
-<div class="rule"><b>FAQ-1 — What is Contact an Admin used for?</b>
-<p>Report problematic players, appeal a ban, or ask a question that needs a server admin.</p></div>
-<div class="rule"><b>FAQ-2 — How can I report issues?</b>
-<p>Player issues: Contact an Admin. Technical issues: the technical / bug channels. Gameplay feedback: the gameplay-feedback channel.</p></div>
-<div class="rule"><b>FAQ-3 — Can I contact admins directly?</b>
-<p>Do not DM admins unless explicitly asked. Report all issues in Contact an Admin.</p></div>
-<div class="rule"><b>FAQ-4 — How do I appeal a ban?</b>
-<p>Go to Contact an Admin, tag the Admin role, give your Steam profile permalink, and explain why the ban should be lowered or removed.</p></div>
-<div class="rule"><b>FAQ-5 — Can I get help in voice chat?</b>
-<p>No. Reports stay in Contact an Admin, not voice.</p></div>
-<div class="rule"><b>FAQ-6 — How to get a SteamID64</b>
-<p><b>Steam desktop:</b> open the profile → right-click the page → Copy Page URL → paste into steamid.io → lookup → copy steam64ID.</p>
-<p><b>Browser:</b> copy the profile URL → paste into steamid.io → lookup → copy steam64ID.</p></div>
-<div class="rule"><b>How to make a report</b>
-<ul>
-<li>Tag the Admin role.</li>
-<li>Provide the in-game name of the offending player.</li>
-<li>Tell us their team, and squad if you know it.</li>
-<li>Explain in detail what they did.</li>
-<li>Add evidence if you have it. Video is preferred.</li>
-</ul>
-</div>
-<div class="sponsor">
-<img src="qLogo.png" alt="Qonzer">
-<p>WARDOGS servers sponsored by Qonzer.</p>
-</div>
+<h1 style="font-size:28px;margin-top:24px">RULES FAQ</h1>
+<div class="item"><b>FAQ-1 Contact an Admin</b><p>Report players, appeal a ban, or ask something that needs an admin.</p></div>
+<div class="item"><b>FAQ-2 How do I report?</b><p>Players: Contact an Admin. Tech: technical / bug channels. Gameplay: feedback channel.</p></div>
+<div class="item"><b>FAQ-3 DM admins?</b><p>No, unless they ask.</p></div>
+<div class="item"><b>FAQ-4 Appeal</b><p>Tag Admin, Steam permalink, why the ban should change.</p></div>
+<div class="item"><b>FAQ-5 Voice reports?</b><p>No. Text only.</p></div>
+<div class="item"><b>FAQ-6 SteamID64</b><p>Copy the Steam profile URL, paste it into steamid.io, copy the steam64ID.</p></div>
+<div class="item"><b>How to report</b><ul><li>Tag Admin</li><li>In-game name</li><li>Team / squad</li><li>What they did</li><li>Video if you have it</li></ul></div>
+<div class="sponsor"><img src="qLogo.png" alt="Qonzer"><span>WARDOGS servers sponsored by Qonzer.</span></div>
 </section>
 </main>
 
 <footer>
-<div class="wrap"><a href="index.html">← Back to Home</a> · <a href="squad-rules.html">Squad Rules</a></div>
+<div class="wrap"><a href="index.html">← Home</a> · <a href="squad-rules.html">Squad Rules</a></div>
 </footer>
 </body>
 </html>

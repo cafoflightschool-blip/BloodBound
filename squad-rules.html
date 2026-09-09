@@ -7,14 +7,15 @@
 <link rel="icon" href="bb_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0c0d0b;--panel:#161712;--line:#3a3518;--gold:#e0b423;--gold-2:#f3d36a;--text:#efe8d4;--muted:#b7ad8f;--discord:#5865F2}
+:root{--gold:#e0b423;--gold-2:#f3d36a;--text:#f3ecd8;--muted:#d0c4a6;--discord:#5865F2}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#14140f url("squadwallpaper.png") center/cover fixed no-repeat}
+body::before{content:"";position:fixed;inset:0;background:rgba(16,16,10,.82);z-index:-1}
 a{color:var(--gold)}
 img{max-width:100%;display:block}
 .wrap{width:min(860px,calc(100% - 32px));margin:0 auto}
-nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 22px;background:#0c0d0b;border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;background:rgba(12,11,8,.9);border-bottom:1px solid rgba(224,180,35,.25)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
 .brand img{width:40px;height:40px;object-fit:contain}
 .brand b{font-family:Oswald,sans-serif;letter-spacing:.14em;font-size:18px}
@@ -22,22 +23,23 @@ nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-con
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:12px}
 .btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;font-size:12px}
 .btn.discord{background:var(--discord);color:#fff}
-.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-header{padding:28px 0 8px}
-h1{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:34px;color:var(--gold)}
-h2{font-family:Oswald,sans-serif;letter-spacing:.1em;font-size:24px;color:var(--gold);margin:28px 0 10px}
-.lead,.rule p,.rule li,.faction p{color:var(--muted)}
-.jump{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
-.jump a{border:1px solid var(--line);padding:6px 10px;text-decoration:none;color:var(--gold-2);font-size:13px;font-weight:700}
-.notice{background:#2a160f;border:1px solid #6a2a1e;padding:12px 14px;margin:12px 0 16px;color:#f0d2c6}
-.rule{background:var(--panel);border:1px solid var(--line);margin-bottom:8px;padding:12px 14px}
-.rule b{display:block;margin-bottom:4px}
-.rule ul{margin:6px 0 0 18px}
-.faction{background:var(--panel);border:1px solid var(--line);margin-bottom:12px;overflow:hidden}
-.faction img{width:100%;height:140px;object-fit:cover;object-position:center}
-.faction .body{padding:12px 14px}
-.faction h3{font-family:Oswald,sans-serif;letter-spacing:.06em;font-size:18px;margin-bottom:6px}
-footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);font-size:14px;margin-top:24px}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(224,180,35,.35)}
+header{padding:28px 0 10px}
+h1{font-family:Oswald,sans-serif;letter-spacing:.12em;font-size:36px;color:var(--gold)}
+.lead{color:var(--muted);margin:8px 0 16px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.jump a{color:var(--gold-2);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.banner{width:100%;height:150px;object-fit:cover;object-position:center;margin:28px 0 16px}
+.notice{color:#f0d2c6;margin:0 0 18px;font-style:italic}
+.item{padding:12px 0 12px 14px;border-left:2px solid rgba(224,180,35,.55);margin-bottom:10px}
+.item b{display:block;font-family:Oswald,sans-serif;letter-spacing:.06em;margin-bottom:4px}
+.item p,.item li{color:var(--muted)}
+.item ul{margin:6px 0 0 18px}
+.faction{margin:0 0 22px}
+.faction img{width:100%;height:130px;object-fit:cover}
+.faction h3{font-family:Oswald,sans-serif;letter-spacing:.06em;margin:10px 0 4px}
+.faction p{color:var(--muted)}
+footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(224,180,35,.2);margin-top:28px}
 </style>
 </head>
 <body>
@@ -45,10 +47,12 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <a class="brand" href="index.html"><img src="bb_logo.png" alt="Blood Bound"><b>BLOOD BOUND</b></a>
 <div class="nav-links">
 <a href="index.html">Home</a>
-<a href="#rules">Rules</a>
-<a href="#faq">Rules FAQ</a>
+<a href="#general">General</a>
+<a href="#server">Server</a>
+<a href="#seeding">Seeding</a>
+<a href="#faq">FAQ</a>
 <a href="#claims">Vic Claims</a>
-<a class="btn ghost" href="https://joinsquad.bloodbound.eu/" target="_blank">Join Squad</a>
+<a class="btn ghost" href="wardogs-rules.html">WARDOGS Rules</a>
 <a class="btn discord" href="https://discord.bloodbound.eu/" target="_blank">Discord</a>
 </div>
 </nav>
@@ -56,9 +60,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 <header>
 <div class="wrap">
 <h1>SQUAD RULES</h1>
-<p class="lead">One page. Rules, FAQ, then the vic claim list.</p>
+<p class="lead">Rules, Rules FAQ, then the vic claim list.</p>
 <div class="jump">
-<a href="#rules">Rules</a>
+<a href="#general">General</a>
+<a href="#server">Server</a>
+<a href="#seeding">Seeding</a>
 <a href="#faq">Rules FAQ</a>
 <a href="#claims">Vic claim list</a>
 </div>
@@ -66,70 +72,73 @@ footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--muted);f
 </header>
 
 <main class="wrap">
-<section id="rules">
-<h2>RULES</h2>
-<div class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay.</div>
-<div class="rule"><b>1.1 Be Respectful</b><p>Keep discussions civil. No offensive language, personal attacks or harassment.</p></div>
-<div class="rule"><b>1.2 No Spamming or Advertising</b><p>No mic-spam, advertising or recruiting without permission from Clan Management.</p></div>
-<div class="rule"><b>1.3 No Inappropriate Content</b><p>No pornography, racism, “feet”, discriminatory speech, bright flashing images or gore.</p></div>
-<div class="rule"><b>1.4 No Griefing</b><p>No trolling, griefing or toxicity.</p></div>
-<div class="rule"><b>1.5 No Discrimination</b><p>Zero-tolerance for racism, homophobia, sexism or any discrimination.</p></div>
-<div class="rule"><b>1.6 No Politics</b><p>No political or extremist references in names or chat. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
-<div class="rule"><b>1.7 Appealing a Ban</b><p>Use the Rules FAQ below.</p></div>
-<div class="rule"><b>1.8 Minimum Age</b><p>16.</p></div>
-<div class="rule"><b>1.9 No Impersonation</b><p>Impersonating admins, members or OWI staff will be harshly punished.</p></div>
-<div class="rule"><b>2.1 No Teamkilling</b><ul><li>No intentional TKs.</li><li>Apologise for TKs in ALL chat.</li></ul></div>
-<div class="rule"><b>2.2 No Ghosting</b><ul><li>No ghosting or stream sniping.</li><li>No saying GG during an active round or baiting for intel.</li></ul></div>
-<div class="rule"><b>2.3 No Exploits</b><p>Exploits and cheats are not allowed.</p></div>
-<div class="rule"><b>2.4 No Main Camping</b><ul><li>Main camping is not allowed.</li><li>You may deal with mortar FOBs, UB32s, TOWs or chase a vehicle back, then return to active objectives.</li></ul></div>
-<div class="rule"><b>2.5 Play the Objective</b><ul><li>All squads play active objectives.</li><li>Commanders should use role assets.</li></ul></div>
-<div class="rule"><b>2.6 Squad Leader Requirements</b><ul><li>English, mic, communicate.</li><li>Only create a squad if you will lead it.</li><li>General infantry needs 4 to lock.</li></ul></div>
-<div class="rule"><b>2.7 Specialised Infantry Squads</b><p>Can lock below 4 if named MORTAR, CMD, Tow-FOB or LOGI. Logis are a team asset.</p></div>
-<div class="rule"><b>2.8 Vehicle Claims</b><ul><li>One claim per squad. Name the asset in the squad name.</li><li>Open-top gunners such as MRAP/MK19 are not specialised vehicles.</li><li>First correctly named squad gets the claim. Commander loses claims when they take CMD.</li><li>Unclaimed vehicles are team assets. Claim ends when the vehicle dies or returns to main.</li><li>APC, IFV, MBT, HELI, BRADLY are not valid names.</li><li>Crewman-kit vehicles need 2 crewmen in driver/gunner.</li></ul></div>
-<div class="rule"><b>2.9 No Asset Hogging</b><p>Don’t hog vehicles.</p></div>
-<div class="rule"><b>2.10 No Asset Wasting</b><p>No abandoning vehicles or heli ramming. IED bikes are allowed.</p></div>
-<div class="rule"><b>2.11 Bot kicks</b><p>Steam under 10 days, no community profile, VAC/game ban in 180 days, short names, hidden characters, URL in name.</p></div>
-<div class="rule"><b>3.1 Seeding FOB placement</b><p>Under 60 players: don’t build FOBs/HABs on middle caps.</p></div>
-<div class="rule"><b>3.2 Don’t hurt seeding</b><p>Don’t camp map borders and kill people crossing into the play area.</p></div>
-</section>
+<img class="banner" id="general" src="squadgeneralrules.png" alt="General Rules">
+<p class="notice">Admins reserve the right to remove anyone disrupting the server atmosphere or gameplay.</p>
+<div class="item"><b>1.1 Be Respectful</b><p>Keep discussions civil. No offensive language, personal attacks or harassment.</p></div>
+<div class="item"><b>1.2 No Spamming or Advertising</b><p>No mic-spam, advertising or recruiting without permission from Clan Management.</p></div>
+<div class="item"><b>1.3 No Inappropriate Content</b><p>No pornography, racism, “feet”, discriminatory speech, bright flashing images or gore.</p></div>
+<div class="item"><b>1.4 No Griefing</b><p>No trolling, griefing or toxicity.</p></div>
+<div class="item"><b>1.5 No Discrimination</b><p>Zero-tolerance for racism, homophobia, sexism or any discrimination.</p></div>
+<div class="item"><b>1.6 No Politics</b><p>No political or extremist references in names or chat. Examples: Azov, Wagner, IDF, Iran, Hamas, Nazis, KKK.</p></div>
+<div class="item"><b>1.7 Appealing a Ban</b><p>Use the Rules FAQ below.</p></div>
+<div class="item"><b>1.8 Minimum Age</b><p>16.</p></div>
+<div class="item"><b>1.9 No Impersonation</b><p>Impersonating admins, members or OWI staff will be harshly punished.</p></div>
+
+<img class="banner" id="server" src="squadserverrules.png" alt="Server Rules">
+<div class="item"><b>2.1 No Teamkilling</b><ul><li>No intentional TKs.</li><li>Apologise for TKs in ALL chat.</li></ul></div>
+<div class="item"><b>2.2 No Ghosting</b><ul><li>No ghosting or stream sniping.</li><li>No saying GG during an active round or baiting for intel.</li></ul></div>
+<div class="item"><b>2.3 No Exploits</b><p>Exploits and cheats are not allowed.</p></div>
+<div class="item"><b>2.4 No Main Camping</b><ul><li>Main camping is not allowed.</li><li>You may deal with mortar FOBs, UB32s, TOWs or chase a vehicle back, then return to active objectives.</li></ul></div>
+<div class="item"><b>2.5 Play the Objective</b><ul><li>All squads play active objectives.</li><li>Commanders should use role assets.</li></ul></div>
+<div class="item"><b>2.6 Squad Leader Requirements</b><ul><li>English, mic, communicate.</li><li>Only create a squad if you will lead it.</li><li>General infantry needs 4 to lock.</li></ul></div>
+<div class="item"><b>2.7 Specialised Infantry Squads</b><p>Can lock below 4 if named MORTAR, CMD, Tow-FOB or LOGI. Logis are a team asset.</p></div>
+<div class="item"><b>2.8 Vehicle Claims</b><ul><li>One claim per squad. Name the asset in the squad name.</li><li>Open-top gunners such as MRAP/MK19 are not specialised vehicles.</li><li>First correctly named squad gets the claim. Commander loses claims when they take CMD.</li><li>Unclaimed vehicles are team assets. Claim ends when the vehicle dies or returns to main.</li><li>APC, IFV, MBT, HELI, BRADLY are not valid names.</li><li>Crewman-kit vehicles need 2 crewmen in driver/gunner.</li></ul></div>
+<div class="item"><b>2.9 No Asset Hogging</b><p>Don’t hog vehicles.</p></div>
+<div class="item"><b>2.10 No Asset Wasting</b><p>No abandoning vehicles or heli ramming. IED bikes are allowed.</p></div>
+<div class="item"><b>2.11 Bot kicks</b><p>Steam under 10 days, no community profile, VAC/game ban in 180 days, short names, hidden characters, URL in name.</p></div>
+
+<img class="banner" id="seeding" src="squadseedingrules.png" alt="Seeding Rules">
+<p class="notice">If the server is under 60 players, seeding rules are in effect until a live broadcast.</p>
+<div class="item"><b>3.1 Seeding FOB placement</b><p>Don’t build FOBs / HABs on middle caps.</p></div>
+<div class="item"><b>3.2 Don’t hurt seeding</b><p>Don’t camp map borders and kill people crossing into the play area.</p></div>
 
 <section id="faq">
-<h2>RULES FAQ</h2>
-<div class="rule"><b>Is it okay to teamkill if…?</b><p>Never. Report it in Contact an Admin.</p></div>
-<div class="rule"><b>Can I stream on Discord?</b><p>Not the live game on our Discord. Use a 15 minute delay elsewhere if you can.</p></div>
-<div class="rule"><b>Can I say GG during an active round?</b><p>No.</p></div>
-<div class="rule"><b>Can I switch teams mid-round?</b><p>Not after you have played on the other team.</p></div>
-<div class="rule"><b>Glitched under the map?</b><p>Don’t shoot. Respawn. Don’t share intel from the glitch.</p></div>
-<div class="rule"><b>Mines / TOW / looking into main?</b><p>If the only purpose is watching people leave main, it is main camping. If you are in doubt, you are main camping.</p></div>
-<div class="rule"><b>Valid locked infantry under 4</b><p>CMD, LOGI (no exclusive logi claim), MORTAR, TOW.</p></div>
-<div class="rule"><b>How do I appeal / report?</b><p>Contact an Admin. Do not DM staff unless asked. Tag Squad Admins, give Steam permalink, in-game name, team/squad, what happened, video if you have it. If an admin said no, tag Independent Admin Affairs.</p></div>
+<h1 style="font-size:28px;margin-top:28px">RULES FAQ</h1>
+<div class="item"><b>Is it okay to teamkill if…?</b><p>Never. Report it in Contact an Admin.</p></div>
+<div class="item"><b>Can I stream on Discord?</b><p>Not the live game on our Discord. Use a 15 minute delay elsewhere if you can.</p></div>
+<div class="item"><b>Can I say GG during an active round?</b><p>No.</p></div>
+<div class="item"><b>Can I switch teams mid-round?</b><p>Not after you have played on the other team.</p></div>
+<div class="item"><b>Glitched under the map?</b><p>Don’t shoot. Respawn. Don’t share intel from the glitch.</p></div>
+<div class="item"><b>Mines / TOW / looking into main?</b><p>If the only purpose is watching people leave main, it is main camping. If you are in doubt, you are main camping.</p></div>
+<div class="item"><b>Valid locked infantry under 4</b><p>CMD, LOGI (no exclusive logi claim), MORTAR, TOW.</p></div>
+<div class="item"><b>How do I appeal / report?</b><p>Contact an Admin. Do not DM staff unless asked. Tag Squad Admins, give Steam permalink, in-game name, team/squad, what happened, video if you have it. If an admin said no, tag Independent Admin Affairs.</p></div>
 </section>
 
 <section id="claims">
-<h2>VIC CLAIM LIST</h2>
-<div class="notice">Any unlisted vehicle cannot be claimed and is therefore available to the whole team.</div>
-<article class="faction"><img src="USA.png" alt="United States Army"><div class="body"><h3>United States Army</h3><p><b>Main Battle Tanks:</b> M1A2<br><b>Mobile Gun Systems:</b> MGS<br><b>Infantry Fighting Vehicles:</b> M2A3<br><b>Armored Personnel Carriers:</b> M1126 M240, M1126 M2<br><b>Reconnaissance Vehicles:</b> M7A3<br><b>One-Man Vehicles:</b> M1151 TOW, M1151 CROWS, MATV TOW, MATV CROWS, M1064<br><b>Helicopters:</b> UH60</p></div></article>
-<article class="faction"><img src="USMC.png" alt="United States Marine Corps"><div class="body"><h3>United States Marine Corps</h3><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> LAV25<br><b>One-Man Vehicles:</b> AAVP, M1151 TOW, M1151 CROWS, MRAP TOW, MRAP CROWS<br><b>Helicopters:</b> UH1Y</p></div></article>
-<article class="faction"><img src="ADF.png" alt="Australian Defence Force"><div class="body"><h3>Australian Defence Force</h3><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> ASLAV<br><b>One-Man Vehicles:</b> PMV RWS, M1151 TOW<br><b>Helicopters:</b> MRH90, UH60M</p></div></article>
-<article class="faction"><img src="BAF.png" alt="British Armed Forces"><div class="body"><h3>British Armed Forces</h3><p><b>Main Battle Tanks:</b> FV4034<br><b>Infantry Fighting Vehicles:</b> FV510 UA, FV510<br><b>Armored Personnel Carriers:</b> FV423 L111A1 RWS<br><b>Reconnaissance Vehicles:</b> FV107<br><b>One-Man Vehicles:</b> FV432 L37A1 RWS, LPPV RWS, M1151 TOW<br><b>Helicopters:</b> SA330</p></div></article>
-<article class="faction"><img src="AFU.png" alt="Armed Forces of Ukraine"><div class="body"><h3>Armed Forces of Ukraine</h3><p><b>Main Battle Tanks:</b> T64<br><b>Infantry Fighting Vehicles:</b> BTR4, BMP1TS, BMP2, BMP1<br><b>One-Man Vehicles:</b> BRDM, Technical Kornet, MTLB PKT, BM21 Grad<br><b>Helicopters:</b> Mi8</p></div></article>
-<article class="faction"><img src="CAF.png" alt="Canadian Armed Forces"><div class="body"><h3>Canadian Armed Forces</h3><p><b>Main Battle Tanks:</b> LEOPARD2<br><b>Infantry Fighting Vehicles:</b> LAV6<br><b>Reconnaissance Vehicles:</b> Coyote<br><b>Armored Personnel Carriers:</b> LAV III C6, LAV III M2<br><b>One-Man Vehicles:</b> TAPV, TLAV, M1151 TOW<br><b>Transport Helicopters:</b> CH146<br><b>CAS Helicopters:</b> CH146 CAS</p></div></article>
-<article class="faction"><img src="CRF.png" alt="Canadian Resistance Forces"><div class="body"><h3>Canadian Resistance Forces</h3><p><b>Reconnaissance Vehicles:</b> Coyote<br><b>One-Man Vehicles:</b> M1151 TOW</p></div></article>
-<article class="faction"><img src="RAF.png" alt="Russian Airborne Forces"><div class="body"><h3>Russian Airborne Forces</h3><p><b>Main Battle Tanks:</b> T72<br><b>Mobile Gun Systems:</b> SPRUT<br><b>Infantry Fighting Vehicles:</b> BMD4, BMD1<br><b>One-Man Vehicles:</b> BTRMDM, BTRZD<br><b>Helicopters:</b> MI8</p></div></article>
-<article class="faction"><img src="RGF.png" alt="Russian Ground Forces"><div class="body"><h3>Russian Ground Forces</h3><p><b>Main Battle Tanks:</b> T72, T90<br><b>Infantry Fighting Vehicles:</b> BMP3, BMP2M, BMP2, BMP1AM, BMP1<br><b>Armored Personnel Carriers:</b> BTR82, MTLB 6MB, BTR80<br><b>One-Man Vehicles:</b> BRDM, MTLB 6MA, MTLB PKT, MTLB VMK, SPANDREL, TIGR RWS<br><b>Helicopters:</b> MI8</p></div></article>
-<article class="faction"><img src="GFI.png" alt="Ground Forces of Iran"><div class="body"><h3>Ground Forces of Iran</h3><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>One-Man Vehicles:</b> MT-LB 6MA S8, BRDM-2 UB-32, SAFIR KORNET<br><b>Helicopters:</b> UH1H</p></div></article>
-<article class="faction"><img src="TLF.png" alt="Turkish Land Forces"><div class="body"><h3>Turkish Land Forces</h3><p><b>Main Battle Tanks:</b> M60<br><b>Infantry Fighting Vehicles:</b> ACV15 25mm, PARS 25mm<br><b>Armored Personnel Carriers:</b> PARS M2, PARS MG3, PARS MK19<br><b>One-Man Vehicles:</b> COBRA RWS M2, COBRA RWS MG3<br><b>Helicopters:</b> UH60</p></div></article>
-<article class="faction"><img src="MEI.png" alt="Middle Eastern Insurgents"><div class="body"><h3>Middle Eastern Insurgents</h3><p><b>Main Battle Tanks:</b> T62<br><b>Infantry Fighting Vehicles:</b> BMP1<br><b>Armored Personnel Carriers:</b> BTR80<br><b>One-Man Vehicles:</b> MTLB PKT, BMP1 ZU23, MTLB ZU23, BRDM2, TECHIE KORNET, TECHIE SPG, TECHIE UB32, TECHIE ZU23, TECHIE BMP1, URAL ZU23</p></div></article>
-<article class="faction"><img src="IMF.png" alt="Irregular Militia Forces"><div class="body"><h3>Irregular Militia Forces</h3><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>Armored Personnel Carriers:</b> BTR80, MTLB 6MB<br><b>One-Man Vehicles:</b> MTLB 6MA, MTLB VMK, MTLB ZU23, BM21, BMP1 ZU23, BRDM2, TECHIE SPG9, TECHIE KORNET, TECHIE ZU23, URAL ZU23</p></div></article>
-<article class="faction"><img src="PLA.png" alt="People’s Liberation Army"><div class="body"><h3>People’s Liberation Army</h3><p><b>Main Battle Tanks:</b> ZTZ<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL, ZSL92 IFV, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></div></article>
-<article class="faction"><img src="PLAGF.png" alt="PLA Amphibious Ground Force"><div class="body"><h3>PLA Amphibious Ground Force</h3><p><b>Main Battle Tanks:</b> ZTZ<br><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></div></article>
-<article class="faction"><img src="PLANMC.png" alt="PLA Navy Marine Corps"><div class="body"><h3>PLA Navy Marine Corps</h3><p><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8J</p></div></article>
-<article class="faction"><img src="WPMC.png" alt="Western Private Military Contractors"><div class="body"><h3>Western Private Military Contractors</h3><p><b>Main Battle Tanks:</b> M60<br><b>One-Man Vehicles:</b> M1117, M113A3 M2, M1151 TOW<br><b>Helicopters:</b> Raven, Loach Scout<br><b>CAS Helicopters:</b> Loach CAS</p></div></article>
+<h1 style="font-size:28px;margin-top:28px">VIC CLAIM LIST</h1>
+<p class="notice">Any unlisted vehicle cannot be claimed and is therefore available to the whole team.</p>
+<article class="faction"><img src="USA.png" alt="United States Army"><h3>United States Army</h3><p><b>Main Battle Tanks:</b> M1A2<br><b>Mobile Gun Systems:</b> MGS<br><b>Infantry Fighting Vehicles:</b> M2A3<br><b>Armored Personnel Carriers:</b> M1126 M240, M1126 M2<br><b>Reconnaissance Vehicles:</b> M7A3<br><b>One-Man Vehicles:</b> M1151 TOW, M1151 CROWS, MATV TOW, MATV CROWS, M1064<br><b>Helicopters:</b> UH60</p></article>
+<article class="faction"><img src="USMC.png" alt="United States Marine Corps"><h3>United States Marine Corps</h3><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> LAV25<br><b>One-Man Vehicles:</b> AAVP, M1151 TOW, M1151 CROWS, MRAP TOW, MRAP CROWS<br><b>Helicopters:</b> UH1Y</p></article>
+<article class="faction"><img src="ADF.png" alt="Australian Defence Force"><h3>Australian Defence Force</h3><p><b>Main Battle Tanks:</b> M1A1<br><b>Infantry Fighting Vehicles:</b> ASLAV<br><b>One-Man Vehicles:</b> PMV RWS, M1151 TOW<br><b>Helicopters:</b> MRH90, UH60M</p></article>
+<article class="faction"><img src="BAF.png" alt="British Armed Forces"><h3>British Armed Forces</h3><p><b>Main Battle Tanks:</b> FV4034<br><b>Infantry Fighting Vehicles:</b> FV510 UA, FV510<br><b>Armored Personnel Carriers:</b> FV423 L111A1 RWS<br><b>Reconnaissance Vehicles:</b> FV107<br><b>One-Man Vehicles:</b> FV432 L37A1 RWS, LPPV RWS, M1151 TOW<br><b>Helicopters:</b> SA330</p></article>
+<article class="faction"><img src="AFU.png" alt="Armed Forces of Ukraine"><h3>Armed Forces of Ukraine</h3><p><b>Main Battle Tanks:</b> T64<br><b>Infantry Fighting Vehicles:</b> BTR4, BMP1TS, BMP2, BMP1<br><b>One-Man Vehicles:</b> BRDM, Technical Kornet, MTLB PKT, BM21 Grad<br><b>Helicopters:</b> Mi8</p></article>
+<article class="faction"><img src="CAF.png" alt="Canadian Armed Forces"><h3>Canadian Armed Forces</h3><p><b>Main Battle Tanks:</b> LEOPARD2<br><b>Infantry Fighting Vehicles:</b> LAV6<br><b>Reconnaissance Vehicles:</b> Coyote<br><b>Armored Personnel Carriers:</b> LAV III C6, LAV III M2<br><b>One-Man Vehicles:</b> TAPV, TLAV, M1151 TOW<br><b>Transport Helicopters:</b> CH146<br><b>CAS Helicopters:</b> CH146 CAS</p></article>
+<article class="faction"><img src="CRF.png" alt="Canadian Resistance Forces"><h3>Canadian Resistance Forces</h3><p><b>Reconnaissance Vehicles:</b> Coyote<br><b>One-Man Vehicles:</b> M1151 TOW</p></article>
+<article class="faction"><img src="RAF.png" alt="Russian Airborne Forces"><h3>Russian Airborne Forces</h3><p><b>Main Battle Tanks:</b> T72<br><b>Mobile Gun Systems:</b> SPRUT<br><b>Infantry Fighting Vehicles:</b> BMD4, BMD1<br><b>One-Man Vehicles:</b> BTRMDM, BTRZD<br><b>Helicopters:</b> MI8</p></article>
+<article class="faction"><img src="RGF.png" alt="Russian Ground Forces"><h3>Russian Ground Forces</h3><p><b>Main Battle Tanks:</b> T72, T90<br><b>Infantry Fighting Vehicles:</b> BMP3, BMP2M, BMP2, BMP1AM, BMP1<br><b>Armored Personnel Carriers:</b> BTR82, MTLB 6MB, BTR80<br><b>One-Man Vehicles:</b> BRDM, MTLB 6MA, MTLB PKT, MTLB VMK, SPANDREL, TIGR RWS<br><b>Helicopters:</b> MI8</p></article>
+<article class="faction"><img src="GFI.png" alt="Ground Forces of Iran"><h3>Ground Forces of Iran</h3><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>One-Man Vehicles:</b> MT-LB 6MA S8, BRDM-2 UB-32, SAFIR KORNET<br><b>Helicopters:</b> UH1H</p></article>
+<article class="faction"><img src="TLF.png" alt="Turkish Land Forces"><h3>Turkish Land Forces</h3><p><b>Main Battle Tanks:</b> M60<br><b>Infantry Fighting Vehicles:</b> ACV15 25mm, PARS 25mm<br><b>Armored Personnel Carriers:</b> PARS M2, PARS MG3, PARS MK19<br><b>One-Man Vehicles:</b> COBRA RWS M2, COBRA RWS MG3<br><b>Helicopters:</b> UH60</p></article>
+<article class="faction"><img src="MEI.png" alt="Middle Eastern Insurgents"><h3>Middle Eastern Insurgents</h3><p><b>Main Battle Tanks:</b> T62<br><b>Infantry Fighting Vehicles:</b> BMP1<br><b>Armored Personnel Carriers:</b> BTR80<br><b>One-Man Vehicles:</b> MTLB PKT, BMP1 ZU23, MTLB ZU23, BRDM2, TECHIE KORNET, TECHIE SPG, TECHIE UB32, TECHIE ZU23, TECHIE BMP1, URAL ZU23</p></article>
+<article class="faction"><img src="IMF.png" alt="Irregular Militia Forces"><h3>Irregular Militia Forces</h3><p><b>Main Battle Tanks:</b> T72, T62<br><b>Infantry Fighting Vehicles:</b> BMP2, BMP1<br><b>Armored Personnel Carriers:</b> BTR80, MTLB 6MB<br><b>One-Man Vehicles:</b> MTLB 6MA, MTLB VMK, MTLB ZU23, BM21, BMP1 ZU23, BRDM2, TECHIE SPG9, TECHIE KORNET, TECHIE ZU23, URAL ZU23</p></article>
+<article class="faction"><img src="PLA.png" alt="People’s Liberation Army"><h3>People’s Liberation Army</h3><p><b>Main Battle Tanks:</b> ZTZ<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL, ZSL92 IFV, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></article>
+<article class="faction"><img src="PLAGF.png" alt="PLA Amphibious Ground Force"><h3>PLA Amphibious Ground Force</h3><p><b>Main Battle Tanks:</b> ZTZ<br><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZSD89 IFV<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8G, Z9A</p></article>
+<article class="faction"><img src="PLANMC.png" alt="PLA Navy Marine Corps"><h3>PLA Navy Marine Corps</h3><p><b>Mobile Gun Systems:</b> ZTD<br><b>Infantry Fighting Vehicles:</b> ZBD, ZBL<br><b>One-Man Vehicles:</b> CSK HJ8, CSK RWS<br><b>Helicopters:</b> Z8J</p></article>
+<article class="faction"><img src="WPMC.png" alt="Western Private Military Contractors"><h3>Western Private Military Contractors</h3><p><b>Main Battle Tanks:</b> M60<br><b>One-Man Vehicles:</b> M1117, M113A3 M2, M1151 TOW<br><b>Helicopters:</b> Raven, Loach Scout<br><b>CAS Helicopters:</b> Loach CAS</p></article>
 </section>
 </main>
 
 <footer>
-<div class="wrap"><a href="index.html">← Back to Home</a></div>
+<div class="wrap"><a href="index.html">← Home</a> · <a href="wardogs-rules.html">WARDOGS Rules</a></div>
 </footer>
 </body>
 </html>
